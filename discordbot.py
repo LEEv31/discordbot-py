@@ -19,7 +19,7 @@ mmm = ""
 
 @bot.command()
 async def 레이드(ctx, *, message=None):
-    if ctx.message.author.guild_permissions.administrator or ctx.message.author.name == "숯미남":
+    if ctx.message.author.guild_permissions.administrator or ctx.message.author == "숯미남":
         global a
         a = message
         global abc
