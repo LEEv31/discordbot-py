@@ -15,6 +15,7 @@ y = ["X","X","X","X","X"]
 i = 0
 k = 0
 a = ""
+mmm = ""
 
 @bot.command()
 async def 레이드(ctx, *, message=None):
@@ -29,7 +30,16 @@ async def 레이드(ctx, *, message=None):
     await msg.add_reaction("1️⃣")
     await msg.add_reaction("2️⃣")
     await msg.add_reaction("⚠️")
-
+    
+@bot.command()
+async def 레이드수정(ctx, *, mmm=None):
+    global msg
+    a=mmm
+    abv = Embed(title="레이드 길드 팟", description=a)
+    abv.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
+    abv.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+    await msg.edit(embed=abv)
+    
 @bot.event
 async def on_reaction_add(reaction, user):
     global msg
