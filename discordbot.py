@@ -7,8 +7,8 @@ import os
 intents = discord.Intents.all()
 
 TOKEN = os.environ['TOKEN']
-PREFIX = os.environ['PREFIX']
-client = commands.Bot(intents=intents)
+
+bot = commands.Bot(command_prefix='/',intents=intents)
 
 x = ["X","X","X","X","X"]
 y = ["X","X","X","X","X"]
@@ -16,8 +16,8 @@ i = 0
 k = 0
 a = ""
 
-@client.command(name='레이드')
-async def raid(ctx, *, message=None):
+@bot.command()
+async def 레이드(ctx, *, message=None):
     global a
     a = message
     global abc
@@ -30,7 +30,7 @@ async def raid(ctx, *, message=None):
     await msg.add_reaction("2️⃣")
     await msg.add_reaction("⚠️")
 
-@client.event
+@bot.event
 async def on_reaction_add(reaction, user):
     global msg
     if user.bot == 1:
@@ -54,7 +54,7 @@ async def on_reaction_add(reaction, user):
     if str(reaction.emoji) == "⚠️":
         embed = Embed(title="⚠️길드팟 모집 완료⚠️")
         await reaction.message.channel.send(embed=embed)
-@client.event
+@bot.event
 async def on_reaction_remove(reaction, user):
     global msg
     if str(reaction.emoji) == "1️⃣":
@@ -69,5 +69,5 @@ async def on_reaction_remove(reaction, user):
             abf.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             abf.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=abf)
-
+            
 client.run(TOKEN)
