@@ -70,4 +70,4 @@ async def on_reaction_remove(reaction, user):
             abf.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=abf)
             
-client.run(TOKEN)
+bot.run(TOKEN)
