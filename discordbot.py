@@ -5,6 +5,7 @@ from discord import Embed
 
 intents = discord.Intents.all()
 
+TOKEN = os.onviron['TOKEN']
 bot = commands.Bot(command_prefix='/',intents=intents)
 
 x = ["X","X","X","X","X"]
@@ -67,4 +68,4 @@ async def on_reaction_remove(reaction, user):
             abf.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=abf)
 
-bot.run('MTA1MTQ2OTc2MjQ5ODEzODE5Mg.GsWFld.SFytfFHbAmzL6LdQYS7_x9PDWxIxUkOayIkeRM')
+bot.run(TOKEN)
