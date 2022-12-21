@@ -6,8 +6,8 @@ import os
 
 intents = discord.Intents.all()
 
-TOKEN = os.onviron['TOKEN']
-PREFIX = os.onviron['PREFIX']
+TOKEN = os.environ['TOKEN']
+PREFIX = os.environ['PREFIX']
 client = client.Bot(intents=intents)
 
 x = ["X","X","X","X","X"]
