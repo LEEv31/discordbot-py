@@ -31,7 +31,7 @@ async def 레이드(ctx, *, message=None):
         await msg.add_reaction("1️⃣")
         await msg.add_reaction("2️⃣")
         await msg.add_reaction("⚠️")
-     else:
+    else:
         await ctx.send('임원이 아닙니다.')
 @bot.command()
 async def 레이드수정(ctx, *, mmm=None):
