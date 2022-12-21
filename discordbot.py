@@ -8,7 +8,7 @@ intents = discord.Intents.all()
 
 TOKEN = os.environ['TOKEN']
 PREFIX = os.environ['PREFIX']
-client = (intents=intents)
+client = discord.Client
 
 x = ["X","X","X","X","X"]
 y = ["X","X","X","X","X"]
