@@ -19,7 +19,7 @@ mmm = ""
 
 @bot.command()
 async def 레이드(ctx, *, message=None):
-    if ctx.message.author.guild_permissions.administrator:
+    if ctx.message.author.guild_permissions.administrator or ctx.message.author.name == "숯미남":
         global a
         a = message
         global abc
@@ -31,10 +31,10 @@ async def 레이드(ctx, *, message=None):
         await msg.add_reaction("1️⃣")
         await msg.add_reaction("2️⃣")
         await msg.add_reaction("⚠️")
-    
+     else:
+        await ctx.send('임원이 아닙니다.')
 @bot.command()
 async def 레이드수정(ctx, *, mmm=None):
-    if ctx.message.author.guild_permissions.administrator:
         global msg
         a=mmm
         abv = Embed(title="레이드 길드 팟", description=a)
@@ -44,7 +44,6 @@ async def 레이드수정(ctx, *, mmm=None):
     
 @bot.event
 async def on_reaction_add(reaction, user):
-    if ctx.message.author.guild_permissions.administrator:
         global msg
         if user.bot == 1:
             return None
@@ -69,7 +68,6 @@ async def on_reaction_add(reaction, user):
             await reaction.message.channel.send(embed=embed)
 @bot.event
 async def on_reaction_remove(reaction, user):
-    if ctx.message.author.guild_permissions.administrator:
         global msg
         if str(reaction.emoji) == "1️⃣":
                 x.remove(user.name)
