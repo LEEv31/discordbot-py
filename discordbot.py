@@ -16,8 +16,8 @@ i = 0
 k = 0
 a = ""
 
-@client.command()
-async def 레이드(ctx, *, message=None):
+@client.command(name='레이드')
+async def raid(ctx, *, message=None):
     global a
     a = message
     global abc
