@@ -148,6 +148,18 @@ async def 레이드(ctx, *, message=None):
         view2.add_item(button6)
 
         global raidcount,msg,msg1,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2
+        if message == "초기화":
+                x = ["X","X","X","X","X"]
+                y = ["X","X","X","X","X"]
+
+                x1 = ["X","X","X","X","X"]
+                y1 = ["X","X","X","X","X"]
+
+                x2 = ["X","X","X","X","X"]
+                y2 = ["X","X","X","X","X"]
+
+                raidcount,i,k,i1,k1,i2,k2 = 0,0,0,0,0,0,0
+                msg,mssg1,mssg2,mssg3="","","",""
         raidcount += 1
         if raidcount == 1:
                 mssg1=message
@@ -169,17 +181,5 @@ async def 레이드(ctx, *, message=None):
                 msg2 = await ctx.send(embed=abc2,view=view2)
         if raidcount == 4:
                 await ctx.send("풀파티입니다.")
-        if message == "초기화":
-                x = ["X","X","X","X","X"]
-                y = ["X","X","X","X","X"]
-
-                x1 = ["X","X","X","X","X"]
-                y1 = ["X","X","X","X","X"]
-
-                x2 = ["X","X","X","X","X"]
-                y2 = ["X","X","X","X","X"]
-
-                raidcount,i,k,i1,k1,i2,k2 = 0,0,0,0,0,0,0
-                msg,mssg1,mssg2,mssg3="","","",""
 
 bot.run(TOKEN)
