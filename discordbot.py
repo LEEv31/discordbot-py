@@ -160,25 +160,27 @@ async def 레이드(ctx, *, message=None):
 
                 raidcount,i,k,i1,k1,i2,k2 = 0,0,0,0,0,0,0
                 msg,mssg1,mssg2,mssg3="","","",""
-        raidcount += 1
-        if raidcount == 1:
+        elif raidcount == 0:
                 mssg1=message
                 abc = Embed(title="레이드 길드 팟", description=mssg1)
                 abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
                 abc.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
                 msg = await ctx.send(embed=abc,view=view)
-        if raidcount == 2:
+                raidcount += 1
+        elif raidcount == 1:
                 mssg2=message
                 abc1 = Embed(title='메뉴 선택하기',description=mssg2)
                 abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
                 abc1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
                 msg1 = await ctx.send(embed=abc1,view=view1)
-        if raidcount == 3:
+                raidcount += 1
+        elif raidcount == 2:
                 mssg3=message
                 abc2 = Embed(title='메뉴 선택하기',description=mssg3)
                 abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
                 abc2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
                 msg2 = await ctx.send(embed=abc2,view=view2)
-        if raidcount == 4:
+                raidcount += 1
+        elif raidcount == 3:
                 await ctx.send("풀파티입니다.")
 bot.run(TOKEN)
