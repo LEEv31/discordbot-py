@@ -137,13 +137,13 @@ async def 레이드(ctx, *, message=None):
         button5.callback = button_callback5
         button6.callback = button_callback6
 
-        view = View()
+        view = View(timeout=None)
         view.add_item(button1)
         view.add_item(button2)
-        view1 = View()
+        view1 = View(timeout=None)
         view1.add_item(button3)
         view1.add_item(button4)
-        view2 = View()
+        view2 = View(timeout=None)
         view2.add_item(button5)
         view2.add_item(button6)
 
