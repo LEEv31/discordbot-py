@@ -69,8 +69,8 @@ async def 레이드(ctx, *, message=None):
                 if interaction.user.display_name in x1:
                         x1.remove(interaction.user.display_name)
                         embed1 = Embed(title="레이드 길드 팟", description=mssg2)
-                        embed1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-                        embed1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+                        embed1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
+                        embed1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
                         await msg1.edit(embed=embed1)
                         await interaction.response.defer()
                 else:
@@ -92,8 +92,8 @@ async def 레이드(ctx, *, message=None):
                 else:
                         y1.insert(k1,interaction.user.display_name)
                         embed1 = Embed(title="레이드 길드 팟", description=mssg2)
-                        embed1.add_field(name="1 파티", value=x[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
-                        embed1.add_field(name="2 파티", value=y[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
+                        embed1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
+                        embed1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
                         await msg1.edit(embed=embed1)
                         await interaction.response.defer()
                         k1+1
@@ -101,8 +101,8 @@ async def 레이드(ctx, *, message=None):
                 if interaction.user.display_name in x2:
                         x2.remove(interaction.user.display_name)
                         embed2 = Embed(title="레이드 길드 팟", description=mssg3)
-                        embed2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-                        embed2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+                        embed2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
+                        embed2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
                         await msg2.edit(embed=embed2)
                         await interaction.response.defer()
                 else:
@@ -117,8 +117,8 @@ async def 레이드(ctx, *, message=None):
                 if interaction.user.display_name in y2:
                         y2.remove(interaction.user.display_name)
                         embed2 = Embed(title="레이드 길드 팟", description=mssg3)
-                        embed2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-                        embed2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+                        embed2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
+                        embed2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
                         await msg2.edit(embed=embed2)
                         await interaction.response.defer()
                 else:
