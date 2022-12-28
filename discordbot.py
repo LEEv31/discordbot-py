@@ -240,6 +240,7 @@ async def 레이드(ctx, *, message=None):
             view4.add_item(button10)
 
             global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4
+
             if message == "초기화":
                 x = ["X","X","X","X","X"]
                 y = ["X","X","X","X","X"]
@@ -251,6 +252,7 @@ async def 레이드(ctx, *, message=None):
                 y3 = ["X","X","X","X","X"]
                 x4 = ["X","X","X","X","X"]
                 y4 = ["X","X","X","X","X"]
+
             elif raidcount == 0:
                     mssg1=message
                     abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
