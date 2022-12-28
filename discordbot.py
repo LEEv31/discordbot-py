@@ -195,7 +195,7 @@ async def 레이드(ctx, *, message=None):
             await interaction.response.defer()
             i4+1
     async def button_callback10(interaction:discord.Interaction):
-        if interaction.user.display_name in y3:
+        if interaction.user.display_name in y4:
             y4.remove(interaction.user.display_name)
             embed4 = Embed(title="5번 레이드 길드 팟", description=mssg5)
             embed4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
@@ -275,7 +275,7 @@ async def 레이드(ctx, *, message=None):
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
                         msg4 = await ctx.send(embed=abc4,view=view4)
                         raidcount += 1
-            elif raidcount == 5:
+            if raidcount == 5:
                         await ctx.send("풀파티입니다.")
     else:
             ctx.send("임원이 아닙니다.")
