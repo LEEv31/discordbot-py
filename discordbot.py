@@ -25,7 +25,7 @@ x4 = ["X","X","X","X","X"]
 y4 = ["X","X","X","X","X"]
 
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-rd1,rd2,rd3,msg,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","",""
+rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","","",""
         
 @bot.command()
 async def 레이드(ctx, *, message=None):
@@ -239,7 +239,7 @@ async def 레이드(ctx, *, message=None):
             view4.add_item(button9)
             view4.add_item(button10)
 
-            global raidcount,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3
+            global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4
             if message == "초기화":
                 x = ["X","X","X","X","X"]
                 y = ["X","X","X","X","X"]
@@ -292,7 +292,7 @@ async def 레이드(ctx, *, message=None):
         ctx.send("임원이 아닙니다.")
 @bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
-    global raidcount,msg,msg1,msg2,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4
     if "1번" in raidedit:
         mssg1= re.sub("1번 ","",raidedit)
         rd1 = Embed(title="1번 레이드 길드 팟", description=mssg1)
