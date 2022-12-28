@@ -277,20 +277,6 @@ async def 레이드(ctx, *, message=None):
                         raidcount += 1
             if raidcount == 5:
                         await ctx.send("풀파티입니다.")
-            if message == "초기화":
-                x = ["X","X","X","X","X"]
-                y = ["X","X","X","X","X"]
-                x1 = ["X","X","X","X","X"]
-                y1 = ["X","X","X","X","X"]
-                x2 = ["X","X","X","X","X"]
-                y2 = ["X","X","X","X","X"]
-                x3 = ["X","X","X","X","X"]
-                y3 = ["X","X","X","X","X"]
-                x4 = ["X","X","X","X","X"]
-                y4 = ["X","X","X","X","X"]
-
-                raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-                rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","",""
         else:
             ctx.send("임원이 아닙니다.")
 @bot.command()
@@ -326,5 +312,21 @@ async def 레이드수정(ctx, *, raidedit=None):
         rd5.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
         rd5.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
         await msg2.edit(embed=rd5)
+@bot.command()
+async def 레이드초기화(ctx, *,message=None):
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,rd1,rd2,rd3
+    if message == "초기화":
+        x = ["X","X","X","X","X"]
+        y = ["X","X","X","X","X"]
+        x1 = ["X","X","X","X","X"]
+        y1 = ["X","X","X","X","X"]
+        x2 = ["X","X","X","X","X"]
+        y2 = ["X","X","X","X","X"]
+        x3 = ["X","X","X","X","X"]
+        y3 = ["X","X","X","X","X"]
+        x4 = ["X","X","X","X","X"]
+        y4 = ["X","X","X","X","X"]
 
+        raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
+        rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","",""
 bot.run(TOKEN)
