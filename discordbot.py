@@ -188,20 +188,20 @@ async def 레이드(ctx, *, message=None):
 async def 레이드수정(ctx, *, raidedit=None):
     global raidcount,msg,msg1,msg2,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3,ret
     if "1번" in raidedit:
-        ret= re.sub("1번 ","",raidedit)
-        rd1 = Embed(title="1번 레이드 길드 팟", description=ret)
+        mssg1= re.sub("1번 ","",raidedit)
+        rd1 = Embed(title="1번 레이드 길드 팟", description=mssg1)
         rd1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
         rd1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
         await msg.edit(embed=rd1)           
     if "2번" in raidedit:
-        ret = re.sub("2번 ","",raidedit)
-        rd2 = Embed(title="2번 레이드 길드 팟", description=ret)
+        mssg2= re.sub("1번 ","",raidedit)
+        rd2 = Embed(title="2번 레이드 길드 팟", description=mssg2)
         rd2.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
         rd2.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
         await msg1.edit(embed=rd2)
     if "3번" in raidedit:
-        ret = re.sub("3번 ","",raidedit)
-        rd3 = Embed(title="3번 레이드 길드 팟", description=ret)
+        mssg3= re.sub("1번 ","",raidedit)
+        rd3 = Embed(title="3번 레이드 길드 팟", description=mssg3)
         rd3.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
         rd3.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
         await msg2.edit(embed=rd3)
