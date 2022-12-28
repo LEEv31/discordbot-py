@@ -29,7 +29,7 @@ rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","
         
 @bot.command()
 async def 레이드(ctx, *, message=None):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     button1 = Button(label="번 파티",emoji="1️⃣")
     button2 = Button(label="번 파티",emoji="2️⃣")
     button3 = Button(label="번 파티",emoji="1️⃣")
@@ -281,7 +281,7 @@ async def 레이드(ctx, *, message=None):
             ctx.send("임원이 아닙니다.")
 @bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,rd1,rd2,rd3
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
     if "1번" in raidedit:
         mssg1= re.sub("1번 ","",raidedit)
         rd1 = Embed(title="1번 레이드 길드 팟", description=mssg1)
@@ -314,7 +314,7 @@ async def 레이드수정(ctx, *, raidedit=None):
         await msg2.edit(embed=rd5)
 @bot.command()
 async def 레이드초기화(ctx):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,rd1,rd2,rd3
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
         x = ["X","X","X","X","X"]
         y = ["X","X","X","X","X"]
         x1 = ["X","X","X","X","X"]
