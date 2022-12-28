@@ -212,34 +212,34 @@ async def 레이드(ctx, *, message=None):
             await interaction.response.defer()
             k4+1  
 
-        button1.callback = button_callback1
-        button2.callback = button_callback2
-        button3.callback = button_callback3
-        button4.callback = button_callback4
-        button5.callback = button_callback5
-        button6.callback = button_callback6
-        button7.callback = button_callback7
-        button8.callback = button_callback8
-        button9.callback = button_callback9
-        button10.callback = button_callback10
+    button1.callback = button_callback1
+    button2.callback = button_callback2
+    button3.callback = button_callback3
+    button4.callback = button_callback4
+    button5.callback = button_callback5
+    button6.callback = button_callback6
+    button7.callback = button_callback7
+    button8.callback = button_callback8
+    button9.callback = button_callback9
+    button10.callback = button_callback10
 
-        view = View(timeout=None)
-        view.add_item(button1)
-        view.add_item(button2)
-        view1 = View(timeout=None)
-        view1.add_item(button3)
-        view1.add_item(button4)
-        view2 = View(timeout=None)
-        view2.add_item(button5)
-        view2.add_item(button6)
-        view3 = View(timeout=None)
-        view3.add_item(button7)
-        view3.add_item(button8)
-        view4 = View(timeout=None)
-        view4.add_item(button9)
-        view4.add_item(button10)
+    view = View(timeout=None)
+    view.add_item(button1)
+    view.add_item(button2)
+    view1 = View(timeout=None)
+    view1.add_item(button3)
+    view1.add_item(button4)
+    view2 = View(timeout=None)
+    view2.add_item(button5)
+    view2.add_item(button6)
+    view3 = View(timeout=None)
+    view3.add_item(button7)
+    view3.add_item(button8)
+    view4 = View(timeout=None)
+    view4.add_item(button9)
+    view4.add_item(button10)
 
-        if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
+    if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
@@ -277,7 +277,7 @@ async def 레이드(ctx, *, message=None):
                         raidcount += 1
             if raidcount == 5:
                         await ctx.send("풀파티입니다.")
-        else:
+    else:
             ctx.send("임원이 아닙니다.")
 @bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
