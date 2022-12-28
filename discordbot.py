@@ -247,35 +247,35 @@ async def 레이드(ctx, *, message=None):
                         abc.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
                         msg = await ctx.send(embed=abc,view=view)
                         raidcount += 1
-            if raidcount == 1:
+            elif raidcount == 1:
                         mssg2=message
                         abc1 = Embed(title='2번 레이드 길드 팟',description=mssg2)
                         abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
                         abc1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
                         msg1 = await ctx.send(embed=abc1,view=view1)
                         raidcount += 1
-            if raidcount == 2:
+            elif raidcount == 2:
                         mssg3=message
                         abc2 = Embed(title='3번 레이드 길드 팟',description=mssg3)
                         abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
                         abc2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
                         msg2 = await ctx.send(embed=abc2,view=view2)
                         raidcount += 1
-            if raidcount == 3:
+            elif raidcount == 3:
                         mssg4=message
                         abc3 = Embed(title='4번 레이드 길드 팟',description=mssg4)
                         abc3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
                         abc3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
                         msg3 = await ctx.send(embed=abc3,view=view3)
                         raidcount += 1
-            if raidcount == 4:
+            elif raidcount == 4:
                         mssg5=message
                         abc4 = Embed(title='5번 레이드 길드 팟',description=mssg5)
                         abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
                         msg4 = await ctx.send(embed=abc4,view=view4)
                         raidcount += 1
-            if raidcount == 5:
+            elif raidcount == 5:
                         await ctx.send("풀파티입니다.")
     else:
             ctx.send("임원이 아닙니다.")
