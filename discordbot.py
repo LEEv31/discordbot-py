@@ -29,6 +29,7 @@ rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","
         
 @bot.command()
 async def 레이드(ctx, *, message=None):
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4
     button1 = Button(label="번 파티",emoji="1️⃣")
     button2 = Button(label="번 파티",emoji="2️⃣")
     button3 = Button(label="번 파티",emoji="1️⃣")
@@ -238,7 +239,6 @@ async def 레이드(ctx, *, message=None):
         view4.add_item(button9)
         view4.add_item(button10)
 
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4
         if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
             if message == "초기화":
                 x = ["X","X","X","X","X"]
@@ -251,6 +251,7 @@ async def 레이드(ctx, *, message=None):
                 y3 = ["X","X","X","X","X"]
                 x4 = ["X","X","X","X","X"]
                 y4 = ["X","X","X","X","X"]
+
                 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
                 rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","",""
             if raidcount == 0:
