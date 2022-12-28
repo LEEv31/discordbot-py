@@ -52,7 +52,6 @@ async def 레이드(ctx, *, message=None):
             i-1
         else:
             x.insert(i,interaction.user.display_name)
-            x.reverse()
             embed = Embed(title="1번 레이드 길드 팟", description=mssg1)
             embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
@@ -70,7 +69,6 @@ async def 레이드(ctx, *, message=None):
             k-1
         else:
             y.insert(k,interaction.user.display_name)
-            y.reverse()
             embed = Embed(title="1번 레이드 길드 팟", description=mssg1)
             embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
