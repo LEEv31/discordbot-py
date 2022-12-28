@@ -27,7 +27,7 @@ rd1,rd2,rd3,msg,mssg1,mssg2,mssg3="","","","","","",""
         
 @bot.command()
 async def 레이드(ctx, *, message=None):
-    if ctx.message.author.display_name == "숯미남":
+    if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
             button1 = Button(label="번 파티",emoji="1️⃣")
             button2 = Button(label="번 파티",emoji="2️⃣")
             button3 = Button(label="번 파티",emoji="1️⃣")
@@ -185,6 +185,8 @@ async def 레이드(ctx, *, message=None):
                     raidcount += 1
             elif raidcount == 3:
                     await ctx.send("풀파티입니다.")
+    else:
+        ctx.send("임원이 아닙니다.")
 @bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
     global raidcount,msg,msg1,msg2,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3
