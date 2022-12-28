@@ -25,7 +25,7 @@ x4 = ["X","X","X","X","X"]
 y4 = ["X","X","X","X","X"]
 
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","",""
+rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","",""
         
 @bot.command()
 async def 레이드(ctx, *, message=None):
