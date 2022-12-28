@@ -233,11 +233,11 @@ async def 레이드(ctx, *, message=None):
             view2.add_item(button5)
             view2.add_item(button6)
             view3 = View(timeout=None)
-            view2.add_item(button7)
-            view2.add_item(button8)
+            view3.add_item(button7)
+            view3.add_item(button8)
             view4 = View(timeout=None)
-            view2.add_item(button9)
-            view2.add_item(button10)
+            view4.add_item(button9)
+            view4.add_item(button10)
 
             global raidcount,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3
             if message == "초기화":
