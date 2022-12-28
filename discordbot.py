@@ -239,7 +239,7 @@ async def 레이드(ctx, *, message=None):
     view4.add_item(button9)
     view4.add_item(button10)
 
-    if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
+    if ctx.message.author.display_name == "숯미남" or ctx.message.author.display_name == "익잡이" or ctx.message.author.display_name == "중2병소서" or ctx.message.author.display_name == "무호흡고기방패" or ctx.message.author.guild_permissions.administrator:
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
@@ -278,7 +278,7 @@ async def 레이드(ctx, *, message=None):
             elif raidcount == 5:
                         await ctx.send("풀파티입니다.")
     else:
-            ctx.send("임원이 아닙니다.")
+            await ctx.send("임원이 아닙니다.")
 @bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
