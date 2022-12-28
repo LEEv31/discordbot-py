@@ -147,7 +147,7 @@ async def 레이드(ctx, *, message=None):
         view2.add_item(button5)
         view2.add_item(button6)
 
-        global raidcount,msg,msg1,msg2,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2
+        global raidcount,msg,msg1,msg2,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3
         if message == "초기화":
                 x = ["X","X","X","X","X"]
                 y = ["X","X","X","X","X"]
@@ -185,7 +185,7 @@ async def 레이드(ctx, *, message=None):
                 await ctx.send("풀파티입니다.")
 @bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
-    global raidcount,msg,msg1,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2
+    global raidcount,msg,msg1,msg2,mssg1,mssg2,mssg3,x,x1,x2,y,y1,y2,k1,k2,k,i,i1,i2,rd1,rd2,rd3
     if "1번" in raidedit:
         rd1 = Embed(title="1번 레이드 길드 팟", description=raidedit)
         rd1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
