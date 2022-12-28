@@ -240,20 +240,6 @@ async def 레이드(ctx, *, message=None):
         view4.add_item(button10)
 
         if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
-            if message == "초기화":
-                x = ["X","X","X","X","X"]
-                y = ["X","X","X","X","X"]
-                x1 = ["X","X","X","X","X"]
-                y1 = ["X","X","X","X","X"]
-                x2 = ["X","X","X","X","X"]
-                y2 = ["X","X","X","X","X"]
-                x3 = ["X","X","X","X","X"]
-                y3 = ["X","X","X","X","X"]
-                x4 = ["X","X","X","X","X"]
-                y4 = ["X","X","X","X","X"]
-
-                raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-                rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","",""
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
@@ -291,6 +277,20 @@ async def 레이드(ctx, *, message=None):
                         raidcount += 1
             if raidcount == 5:
                         await ctx.send("풀파티입니다.")
+            if message == "초기화":
+                x = ["X","X","X","X","X"]
+                y = ["X","X","X","X","X"]
+                x1 = ["X","X","X","X","X"]
+                y1 = ["X","X","X","X","X"]
+                x2 = ["X","X","X","X","X"]
+                y2 = ["X","X","X","X","X"]
+                x3 = ["X","X","X","X","X"]
+                y3 = ["X","X","X","X","X"]
+                x4 = ["X","X","X","X","X"]
+                y4 = ["X","X","X","X","X"]
+
+                raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
+                rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4="","","","","","","","","","","",""
         else:
             ctx.send("임원이 아닙니다.")
 @bot.command()
