@@ -275,7 +275,7 @@ async def 레이드(ctx, *, message=None):
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
                         msg4 = await ctx.send(embed=abc4,view=view4)
                         raidcount += 1
-            if raidcount == 5:
+            elif raidcount == 5:
                         await ctx.send("풀파티입니다.")
     else:
             ctx.send("임원이 아닙니다.")
