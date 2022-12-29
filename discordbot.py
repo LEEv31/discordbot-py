@@ -4,7 +4,6 @@ from discord.ext import commands
 from discord import Embed
 from discord.ui import Button, View
 from discord.utils import get
-from discord_slash import SlashCommand, SlashContext
 import os
 import re
 
