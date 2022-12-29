@@ -27,7 +27,7 @@ y4 = ["X","X","X","X","X"]
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
 rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","",""
         
-@bot.slash_command(description="레이드 일정등록")
+@bot.command()
 async def 레이드(ctx, *, message=None):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     button1 = Button(label="번 파티",emoji="1️⃣")
@@ -281,7 +281,7 @@ async def 레이드(ctx, *, message=None):
                         await ctx.send("풀파티입니다.")
     else:
             ctx.send("임원이 아닙니다.")
-@bot.slash_command(description="레이드수정 x번 일정")
+@bot.command()
 async def 레이드수정(ctx, *, raidedit=None):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
     if "1번" in raidedit:
@@ -314,7 +314,7 @@ async def 레이드수정(ctx, *, raidedit=None):
         rd5.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
         rd5.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
         await msg2.edit(embed=rd5)
-@bot.slash_command(descriptiion="레이드 일정 전체 초기화")
+@bot.command()
 async def 레이드초기화(ctx):
         global x,y,x1,y1,x2,y2,x3,y3,x4,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
         x = ["X","X","X","X","X"]
