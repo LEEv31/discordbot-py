@@ -27,7 +27,7 @@ y4 = ["X","X","X","X","X"]
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
 rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","",""
         
-@bot.command()
+@bot.slash_command(description="레이드 일정등록")
 async def 레이드(ctx, *, message=None):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     button1 = Button(label="번 파티",emoji="1️⃣")
@@ -52,6 +52,7 @@ async def 레이드(ctx, *, message=None):
             i-1
         else:
             x.insert(i,interaction.user.display_name)
+            x.reverse()
             embed = Embed(title="1번 레이드 길드 팟", description=mssg1)
             embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
@@ -69,6 +70,7 @@ async def 레이드(ctx, *, message=None):
             k-1
         else:
             y.insert(k,interaction.user.display_name)
+            y.reverse()
             embed = Embed(title="1번 레이드 길드 팟", description=mssg1)
             embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
@@ -239,7 +241,7 @@ async def 레이드(ctx, *, message=None):
     view4.add_item(button9)
     view4.add_item(button10)
 
-    if ctx.message.author.display_name == "숯미남" or ctx.message.author.display_name == "익잡이" or ctx.message.author.display_name == "중2병소서" or ctx.message.author.display_name == "무호흡고기방패" or ctx.message.author.guild_permissions.administrator:
+    if ctx.message.author.display_name == "숯미남" or ctx.message.author.guild_permissions.administrator:
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
@@ -275,11 +277,11 @@ async def 레이드(ctx, *, message=None):
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
                         msg4 = await ctx.send(embed=abc4,view=view4)
                         raidcount += 1
-            elif raidcount == 5:
+            if raidcount == 5:
                         await ctx.send("풀파티입니다.")
     else:
-            await ctx.send("임원이 아닙니다.")
-@bot.command()
+            ctx.send("임원이 아닙니다.")
+@bot.slash_command(description="레이드수정 x번 일정")
 async def 레이드수정(ctx, *, raidedit=None):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
     if "1번" in raidedit:
@@ -312,7 +314,7 @@ async def 레이드수정(ctx, *, raidedit=None):
         rd5.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
         rd5.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
         await msg2.edit(embed=rd5)
-@bot.command()
+@bot.slash_command(descriptiion="레이드 일정 전체 초기화")
 async def 레이드초기화(ctx):
         global x,y,x1,y1,x2,y2,x3,y3,x4,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,rd1,rd2,rd3
         x = ["X","X","X","X","X"]
