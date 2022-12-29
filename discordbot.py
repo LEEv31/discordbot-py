@@ -4,6 +4,7 @@ from discord.ext import commands
 from discord import Embed
 from discord.ui import Button, View
 from discord.utils import get
+from discord import app_commands
 import os
 import re
 
@@ -27,7 +28,7 @@ y4 = ["X","X","X","X","X"]
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
 rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","",""
         
-@bot.command()
+@bot.slash_command(description="레이드 일정")
 async def 레이드(ctx, *, message=None):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     button1 = Button(label="번 파티",emoji="1️⃣")
