@@ -239,7 +239,7 @@ async def 레이드(ctx, *, message=None):
     view4.add_item(button9)
     view4.add_item(button10)
 
-    if ctx.message.author.display_name == "숯미남" or ctx.message.author.display_name == "익잡이" or ctx.message.author.display_name == "중2병소서" or ctx.message.author.guild_permissions.administrator:
+    if message.guild.get_role(1058238078734565486):
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
