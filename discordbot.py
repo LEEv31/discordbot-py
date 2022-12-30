@@ -24,8 +24,6 @@ y3 = ["X","X","X","X","X"]
 x4 = ["X","X","X","X","X"]
 y4 = ["X","X","X","X","X"]
 
-role = discord.utils.get(reaction.message.guild.roles, name="")
-
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
 rd1,rd2,rd3,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","",""
         
@@ -241,7 +239,7 @@ async def 레이드(ctx, *, message=None):
     view4.add_item(button9)
     view4.add_item(button10)
 
-    if role in user.roles:
+    if 공머장 in user.roles:
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
