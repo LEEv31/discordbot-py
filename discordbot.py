@@ -239,7 +239,7 @@ async def 레이드(ctx, *, message=None):
     view4.add_item(button9)
     view4.add_item(button10)
 
-    if "임원" in ctx.message.author.guild_permissions:
+    if discord.utils.get(ctx.guild.roles, name="임원"):
             if raidcount == 0:
                         mssg1=message
                         abc = Embed(title="1번 레이드 길드 팟", description=mssg1)
