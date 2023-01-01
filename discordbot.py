@@ -356,7 +356,7 @@ async def slash4(interaction: discord.Interaction):
     await interaction.response.send_message(embed=raidhelp,ephemeral=True) 
   
 @tree.command(name = "파티모집기도움말",description="파티모집 어떻게 사용하나요?)")
-async def slash4(interaction: discord.Interaction):
+async def slash5(interaction: discord.Interaction):
     raidhelp1 = Embed(title='딜컷 파티모집기',description="사용법", color=0xb3be23)
     raidhelp1.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
     raidhelp1.add_field(name="/레이드수정", value="1팟~5팟 레이드 일정을 수정합니다.", inline=False)
