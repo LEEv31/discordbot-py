@@ -41,7 +41,7 @@ y4 = ["X","X","X","X","X"]
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
 rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","",""
 
-@tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
+@tree.command(name = "레이드", description="레이드 일정을 추가합니다.", color=0x395bc0)
 async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: str, 숙련: str, 일정: str):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     button1 = Button(label="파티",emoji="1️⃣")
@@ -289,7 +289,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
     Choice(name = '5팟', value='5'),
 ])
 
-@tree.command(name = "레이드수정", description="레이드 일정을 수정합니다.")
+@tree.command(name = "레이드수정", description="레이드 일정을 수정합니다.", color=0x3cc039)
 async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군단장: str,숙련: str, 일정: str):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     if 팟 == '1':
@@ -346,7 +346,7 @@ async def slash3(interaction: discord.Interaction):
     rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg4,mssg5="","","","","","","","","","","","","",""
     await interaction.response.send_message(f"초기화 완료", ephemeral=True)
 
-@tree.command(name = "파티모집기사용법",description="파티모집 어떻게 사용하나요?")
+@tree.command(name = "파티모집기사용법",description="파티모집 어떻게 사용하나요?", color=0xb3be23)
 async def slash4(interaction: discord.Interaction):
     raidhelp = Embed(title='딜컷 파티모집기',description="사용법")
     raidhelp.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
@@ -354,5 +354,14 @@ async def slash4(interaction: discord.Interaction):
     raidhelp.add_field(name="/레이드초기화", value="레이드 일정을 초기화합니다.", inline=False)
     raidhelp.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
     await interaction.response.send_message(embed=raidhelp,ephemeral=True) 
+  
+@tree.command(name = "파티모집기도움말",description="파티모집 어떻게 사용하나요?)", color=0xb3be23)
+async def slash4(interaction: discord.Interaction):
+    raidhelp1 = Embed(title='딜컷 파티모집기',description="사용법")
+    raidhelp1.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
+    raidhelp1.add_field(name="/레이드수정", value="1팟~5팟 레이드 일정을 수정합니다.", inline=False)
+    raidhelp1.add_field(name="/레이드초기화", value="레이드 일정을 초기화합니다.", inline=False)
+    raidhelp1.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
+    await interaction.response.send_message(embed=raidhelp,ephemeral=False) 
  
 client.run(TOKEN)
