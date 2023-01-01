@@ -233,8 +233,8 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
     view4.add_item(button10)
 
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
-
-    if rolesx in interaction.user.roles:
+    rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
+    if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
             if raidcount == 0:
                         mssg1=f"{난이도} {군단장}  {숙련}  {일정}"
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1)
