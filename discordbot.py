@@ -289,7 +289,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
     Choice(name = '5팟', value='5'),
 ])
 
-@tree.command(name = "레이드수정", description="/레이드 일정")
+@tree.command(name = "레이드수정", description="레이드 일정을 수정합니다.")
 async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군단장: str,숙련: str, 일정: str):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     if 팟 == '1':
