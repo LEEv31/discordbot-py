@@ -355,7 +355,7 @@ async def slash4(interaction: discord.Interaction):
     raidhelp.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
     await interaction.response.send_message(embed=raidhelp,ephemeral=True) 
   
-@tree.command(name = "파티모집기도움말",description="파티모집 어떻게 사용하나요?)", color=0xb3be23)
+@tree.command(name = "파티모집기도움말",description="파티모집 어떻게 사용하나요?)")
 async def slash4(interaction: discord.Interaction):
     raidhelp1 = Embed(title='딜컷 파티모집기',description="사용법", color=0xb3be23)
     raidhelp1.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
