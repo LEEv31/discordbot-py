@@ -328,7 +328,7 @@ async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군
         await msg4.edit(embed=rd5)
         await interaction.response.send_message(f"수정 완료", ephemeral=True)
         
-@tree.command(name = "레이드초기화", description="/레이드 일정")
+@tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
     global x,y,x1,y1,x2,y2,x3,y3,x4,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg4,mssg5
     x = ["X","X","X","X","X"]
