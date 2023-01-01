@@ -362,6 +362,6 @@ async def slash5(interaction: discord.Interaction):
     raidhelp1.add_field(name="/레이드수정", value="1팟~5팟 레이드 일정을 수정합니다.", inline=False)
     raidhelp1.add_field(name="/레이드초기화", value="레이드 일정을 초기화합니다.", inline=False)
     raidhelp1.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
-    await interaction.response.send_message(embed=raidhelp,ephemeral=False) 
+    await interaction.response.send_message(embed=raidhelp1,ephemeral=False) 
  
 client.run(TOKEN)
