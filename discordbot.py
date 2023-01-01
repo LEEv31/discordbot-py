@@ -21,7 +21,7 @@ class anlient(discord.Client):
             await tree.sync()
             self.synced  = True
         print(f'{self.user}이 시작되었습니다')
-        game = discord.Game('길드컷 모집중')
+        game = discord.Game('파티 모집중')
         await self.change_presence(status=discord.Status.idle, activity=game)
 
 client = anlient()
