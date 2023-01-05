@@ -93,7 +93,7 @@ class SelectMenu(discord.ui.Select):
             user = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user = f"{interaction.user.display_name}(호크아이)"
@@ -188,7 +188,7 @@ class SelectMenu1(discord.ui.Select):
             user1 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user1 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user1 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user1 = f"{interaction.user.display_name}(호크아이)"
@@ -283,7 +283,7 @@ class SelectMenu2(discord.ui.Select):
             user2 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user2 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user2 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user2 = f"{interaction.user.display_name}(호크아이)"
@@ -378,7 +378,7 @@ class SelectMenu3(discord.ui.Select):
             user3 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user3 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user3 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user3 = f"{interaction.user.display_name}(호크아이)"
@@ -473,7 +473,7 @@ class SelectMenu4(discord.ui.Select):
             user4 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user4 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user4 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user4 = f"{interaction.user.display_name}(호크아이)"
@@ -568,7 +568,7 @@ class SelectMenu5(discord.ui.Select):
             user5 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user5 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user5 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user5 = f"{interaction.user.display_name}(호크아이)"
@@ -663,7 +663,7 @@ class SelectMenu6(discord.ui.Select):
             user6 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user6 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user6 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user6 = f"{interaction.user.display_name}(호크아이)"
@@ -758,7 +758,7 @@ class SelectMenu7(discord.ui.Select):
             user7 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user7 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user7 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user7 = f"{interaction.user.display_name}(호크아이)"
@@ -853,7 +853,7 @@ class SelectMenu8(discord.ui.Select):
             user8 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user8 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user8 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user8 = f"{interaction.user.display_name}(호크아이)"
@@ -948,7 +948,7 @@ class SelectMenu9(discord.ui.Select):
             user9 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user9 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터ㅓ":
+        elif self.values[0] == "블래스터":
             user9 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user9 = f"{interaction.user.display_name}(호크아이)"
