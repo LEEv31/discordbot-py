@@ -134,6 +134,7 @@ class SelectMenu(discord.ui.Select):
             ek1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             ek1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=ek1)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)
             i+1
         await interaction.response.defer()
 class SelectMenu1(discord.ui.Select):
@@ -229,6 +230,7 @@ class SelectMenu1(discord.ui.Select):
             ek2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             ek2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=ek2)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)
             k+1
         await interaction.response.defer()
 class SelectMenu2(discord.ui.Select):
@@ -323,7 +325,8 @@ class SelectMenu2(discord.ui.Select):
             ek3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             ek3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             ek3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=ek3)             
+            await msg1.edit(embed=ek3)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)             
             i1+1
         await interaction.response.defer()
 class SelectMenu3(discord.ui.Select):
@@ -418,7 +421,8 @@ class SelectMenu3(discord.ui.Select):
             ek3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             ek3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             ek3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=ek3)            
+            await msg1.edit(embed=ek3)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)            
             k1+1
         await interaction.response.defer()
 class SelectMenu4(discord.ui.Select):
@@ -513,7 +517,8 @@ class SelectMenu4(discord.ui.Select):
             ek4 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             ek4.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             ek4.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=ek4)         
+            await msg2.edit(embed=ek4)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)         
             i1+1
         await interaction.response.defer()
 class SelectMenu5(discord.ui.Select):
@@ -608,7 +613,8 @@ class SelectMenu5(discord.ui.Select):
             ek5 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             ek5.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             ek5.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=ek5)       
+            await msg2.edit(embed=ek5)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)       
             k2+1
         await interaction.response.defer()
 class SelectMenu6(discord.ui.Select):
@@ -703,7 +709,8 @@ class SelectMenu6(discord.ui.Select):
             ek6 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             ek6.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             ek6.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=ek6)            
+            await msg3.edit(embed=ek6)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)            
             i3+1
         await interaction.response.defer()
 class SelectMenu7(discord.ui.Select):
@@ -798,7 +805,8 @@ class SelectMenu7(discord.ui.Select):
             ek5 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             ek5.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             ek5.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=ek5)           
+            await msg3.edit(embed=ek5)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)           
             k3+1
         await interaction.response.defer()
 class SelectMenu8(discord.ui.Select):
@@ -893,7 +901,8 @@ class SelectMenu8(discord.ui.Select):
             ek8 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             ek8.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             ek8.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=ek8)            
+            await msg4.edit(embed=ek8)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)            
             i4+1
         await interaction.response.defer()
 class SelectMenu9(discord.ui.Select):
@@ -988,7 +997,8 @@ class SelectMenu9(discord.ui.Select):
             ek9 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             ek9.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             ek9.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=ek9)           
+            await msg4.edit(embed=ek9)
+            await interaction.response.send_message(f"참여 완료", ephemeral=True)           
             k4+1
         await interaction.response.defer()
 
