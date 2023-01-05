@@ -43,7 +43,7 @@ rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5=
 eb1,eb2,eb3,eb4,eb5,eb6,eb7,eb8,eb9,ek1,ek2,ek3,ek4,ek5,ek6,ek7,ek8,ek9 = "","","","","","","","","","","","","","","","","",""
 class SelectMenu(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -138,7 +138,7 @@ class SelectMenu(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu1(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options1 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -233,7 +233,7 @@ class SelectMenu1(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu2(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options2 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -328,7 +328,7 @@ class SelectMenu2(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu3(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options3 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -423,7 +423,7 @@ class SelectMenu3(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu4(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options4 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -518,7 +518,7 @@ class SelectMenu4(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu5(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options5 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -613,7 +613,7 @@ class SelectMenu5(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu6(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options6 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -708,7 +708,7 @@ class SelectMenu6(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu7(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options7 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -803,7 +803,7 @@ class SelectMenu7(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu8(discord.ui.Select):
     def __init__(self):
-        raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options8 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -898,7 +898,7 @@ class SelectMenu8(discord.ui.Select):
         await interaction.response.defer()
 class SelectMenu9(discord.ui.Select):
     def __init__(self):
-        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options9 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -994,7 +994,7 @@ class SelectMenu9(discord.ui.Select):
 
 @tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
 async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: str, 숙련: str, 일정: str):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+    global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
     select1=View(timeout=None)
@@ -1068,7 +1068,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
 
 @tree.command(name = "레이드수정", description="레이드 일정을 수정합니다.")
 async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군단장: str,숙련: str, 일정: str):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+    global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     if 팟 == '1':
         mssg1=f"{난이도} {군단장}  {숙련}  {일정}"
         rd1 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x3cc039)
@@ -1107,7 +1107,7 @@ async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군
         
 @tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+    global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     x = ["X","X","X","X","X"]
     y = ["X","X","X","X","X"]
     x1 = ["X","X","X","X","X"]
