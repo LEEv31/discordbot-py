@@ -127,6 +127,7 @@ class SelectMenu(discord.ui.Select):
             eb1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             eb1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=eb1)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)
             i-1
         else:
             x.insert(i,user)
@@ -223,6 +224,7 @@ class SelectMenu1(discord.ui.Select):
             eb2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             eb2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await msg.edit(embed=eb2)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)
             k-1
         else:
             y.insert(k,user1)
@@ -318,7 +320,8 @@ class SelectMenu2(discord.ui.Select):
             eb3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             eb3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             eb3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=eb3)       
+            await msg1.edit(embed=eb3)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)       
             i1-1
         else:
             x1.insert(i1,user2)
@@ -510,7 +513,8 @@ class SelectMenu4(discord.ui.Select):
             eb4 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             eb4.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             eb4.add_field(name="2 파티", value=y1[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=eb4)     
+            await msg2.edit(embed=eb4)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)     
             i1-1
         else:
             x2.insert(i1,user4)
@@ -606,7 +610,8 @@ class SelectMenu5(discord.ui.Select):
             eb5 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             eb5.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             eb5.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=eb5)      
+            await msg2.edit(embed=eb5)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)      
             i2-1
         else:
             y2.insert(k2,user5)
@@ -702,7 +707,8 @@ class SelectMenu6(discord.ui.Select):
             eb6 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             eb6.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             eb6.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=eb6)            
+            await msg3.edit(embed=eb6)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)            
             i3-1
         else:
             x3.insert(i3,user6)
@@ -798,7 +804,8 @@ class SelectMenu7(discord.ui.Select):
             eb5 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             eb5.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             eb5.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=eb5)          
+            await msg3.edit(embed=eb5)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)          
             k3-1
         else:
             y3.insert(k3,user7)
@@ -894,7 +901,8 @@ class SelectMenu8(discord.ui.Select):
             eb8 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             eb8.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             eb8.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=eb8)             
+            await msg4.edit(embed=eb8)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)             
             i4-1
         else:
             x4.insert(i4,user8)
@@ -990,7 +998,8 @@ class SelectMenu9(discord.ui.Select):
             eb9 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             eb9.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             eb9.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=eb9)      
+            await msg4.edit(embed=eb9)
+            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)      
             k4-1
         else:
             y4.insert(i4,user9)
