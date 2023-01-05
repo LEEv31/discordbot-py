@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 import asyncio
 from discord import Embed
-from discord.ui import Button, View
+from discord.ui import Select, View
 from discord.utils import get
 import os
 from discord.app_commands import Choice
@@ -39,208 +39,986 @@ x4 = ["X","X","X","X","X"]
 y4 = ["X","X","X","X","X"]
 
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","",""
+rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","","",""
+eb1,eb2,eb3,eb4,eb5,eb6,eb7,eb8,eb9,ek1,ek2,ek3,ek4,ek5,ek6,ek7,ek8,ek9 = "","","","","","","","","","","","","","","","","",""
+class SelectMenu(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="1 파티", max_values=1, min_values=1, options=options)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user = f"{interaction.user.display_name}(기상술사)"
+        if user in x:
+            x.remove(user)
+            eb1 = Embed(title="1팟 레이드 길드 팟", description=mssg1)
+            eb1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
+            eb1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+            await msg.edit(embed=eb1)
+            i-1
+        else:
+            x.insert(i,user)
+            ek1 = Embed(title="1팟 레이드 길드 팟", description=mssg1)
+            ek1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
+            ek1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+            await msg.edit(embed=ek1)
+            i+1
+        await interaction.response.defer()
+class SelectMenu1(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options1 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="2 파티", max_values=1, min_values=1, options=options1)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user1 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user1 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user1 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user1 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user1 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user1 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user1 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user1 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user1 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user1 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user1 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user1 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user1 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user1 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user1 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user1 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user1 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user1 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user1 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user1 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user1 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user1 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user1 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user1 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user1 = f"{interaction.user.display_name}(기상술사)"
+        if user1 in y:
+            y.remove(user1)
+            eb2 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
+            eb2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
+            eb2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+            await msg.edit(embed=eb2)
+            k-1
+        else:
+            y.insert(k,user1)
+            ek2 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
+            ek2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
+            ek2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
+            await msg.edit(embed=ek2)
+            k+1
+        await interaction.response.defer()
+class SelectMenu2(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options2 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="1 파티", max_values=1, min_values=1, options=options2)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user2 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user2 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user2 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user2 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user2 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user2 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user2 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user2 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user2 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user2 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user2 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user2 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user2 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user2 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user2 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user2 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user2 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user2 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user2 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user2 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user2 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user2 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user2 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user2 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user2 = f"{interaction.user.display_name}(기상술사)"
+        if user2 in x1:
+            x1.remove(user2)
+            eb3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
+            eb3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
+            eb3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
+            await msg1.edit(embed=eb3)       
+            i1-1
+        else:
+            x1.insert(i1,user2)
+            ek3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
+            ek3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
+            ek3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
+            await msg1.edit(embed=ek3)             
+            i1+1
+        await interaction.response.defer()
+class SelectMenu3(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options3 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="2 파티", max_values=1, min_values=1, options=options3)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user3 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user3 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user3 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user3 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user3 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user3 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user3 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user3 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user3 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user3 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user3 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user3 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user3 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user3 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user3 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user3 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user3 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user3 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user3 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user3 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user3 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user3 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user3 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user3 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user3 = f"{interaction.user.display_name}(기상술사)"
+        if user3 in x1:
+            y1.remove(user3)
+            eb3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
+            eb3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
+            eb3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
+            await msg1.edit(embed=eb3)
+            k1-1
+        else:
+            y1.insert(k1,user3)
+            ek3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
+            ek3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
+            ek3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
+            await msg1.edit(embed=ek3)            
+            k1+1
+        await interaction.response.defer()
+class SelectMenu4(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options4 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="1 파티", max_values=1, min_values=1, options=options4)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user4 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user4 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user4 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user4 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user4 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user4 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user4 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user4 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user4 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user4 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user4 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user4 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user4 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user4 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user4 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user4 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user4 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user4 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user4 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user4 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user4 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user4 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user4 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user4 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user4 = f"{interaction.user.display_name}(기상술사)"
+        if user4 in x2:
+            x2.remove(user4)
+            eb4 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
+            eb4.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
+            eb4.add_field(name="2 파티", value=y1[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
+            await msg2.edit(embed=eb4)     
+            i1-1
+        else:
+            x2.insert(i1,user4)
+            ek4 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
+            ek4.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
+            ek4.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
+            await msg2.edit(embed=ek4)         
+            i1+1
+        await interaction.response.defer()
+class SelectMenu5(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options5 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="2 파티", max_values=1, min_values=1, options=options5)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user5 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user5 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user5 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user5 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user5 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user5 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user5 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user5 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user5 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user5 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user5 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user5 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user5 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user5 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user5 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user5 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user5 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user5 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user5 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user5 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user5 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user5 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user5 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user5 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user5 = f"{interaction.user.display_name}(기상술사)"
+        if user5 in y2:
+            y2.remove(user5)
+            eb5 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
+            eb5.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
+            eb5.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
+            await msg2.edit(embed=eb5)      
+            i2-1
+        else:
+            y2.insert(k2,user5)
+            ek5 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
+            ek5.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
+            ek5.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
+            await msg2.edit(embed=ek5)       
+            k2+1
+        await interaction.response.defer()
+class SelectMenu6(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options6 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="1 파티", max_values=1, min_values=1, options=options6)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user6 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user6 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user6 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user6 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user6 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user6 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user6 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user6 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user6 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user6 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user6 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user6 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user6 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user6 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user6 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user6 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user6 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user6 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user6 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user6 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user6 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user6 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user6 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user6 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user6 = f"{interaction.user.display_name}(기상술사)"
+        if user6 in x3:
+            x3.remove(user6)
+            eb6 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
+            eb6.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
+            eb6.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
+            await msg3.edit(embed=eb6)            
+            i3-1
+        else:
+            x3.insert(i3,user6)
+            ek6 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
+            ek6.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
+            ek6.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
+            await msg3.edit(embed=ek6)            
+            i3+1
+        await interaction.response.defer()
+class SelectMenu7(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options7 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="2 파티", max_values=1, min_values=1, options=options7)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user7 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user7 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user7 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user7 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user7 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user7 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user7 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user7 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user7 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user7 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user7 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user7 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user7 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user7 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user7 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user7 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user7 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user7 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user7 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user7 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user7 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user7 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user7 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user7 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user7 = f"{interaction.user.display_name}(기상술사)"
+        if user7 in y3:
+            y3.remove(user7)
+            eb5 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
+            eb5.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
+            eb5.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
+            await msg3.edit(embed=eb5)          
+            k3-1
+        else:
+            y3.insert(k3,user7)
+            ek5 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
+            ek5.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
+            ek5.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
+            await msg3.edit(embed=ek5)           
+            k3+1
+        await interaction.response.defer()
+class SelectMenu8(discord.ui.Select):
+    def __init__(self):
+        raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options8 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="1 파티", max_values=1, min_values=1, options=options8)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user8 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user8 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user8 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user8 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user8 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user8 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user8 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user8 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user8 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user8 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user8 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user8 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user8 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user8 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user8 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user8 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user8 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user8 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user8 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user8 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user8 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user8 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user8 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user8 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user8 = f"{interaction.user.display_name}(기상술사)"
+        if user8 in x4:
+            x4.remove(user8)
+            eb8 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
+            eb8.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
+            eb8.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
+            await msg4.edit(embed=eb8)             
+            i4-1
+        else:
+            x4.insert(i4,user8)
+            ek8 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
+            ek8.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
+            ek8.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
+            await msg4.edit(embed=ek8)            
+            i4+1
+        await interaction.response.defer()
+class SelectMenu9(discord.ui.Select):
+    def __init__(self):
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        options9 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
+        super().__init__(placeholder="2 파티", max_values=1, min_values=1, options=options9)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "버서커":
+            user9 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user9 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user9 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user9 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user9 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user9 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user9 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user9 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user9 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user9 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user9 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터ㅓ":
+            user9 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user9 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user9 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user9 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user9 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user9 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user9 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user9 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user9 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user9 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user9 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user9 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user9 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user9 = f"{interaction.user.display_name}(기상술사)"
+        if user9 in y4:
+            y4.remove(user9)
+            eb9 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
+            eb9.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
+            eb9.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
+            await msg4.edit(embed=eb9)      
+            k4-1
+        else:
+            y4.insert(i4,user9)
+            ek9 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
+            ek9.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
+            ek9.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
+            await msg4.edit(embed=ek9)           
+            k4+1
+        await interaction.response.defer()
 
 @tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
 async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: str, 숙련: str, 일정: str):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
-    button1 = Button(label="파티",emoji="1️⃣")
-    button2 = Button(label="파티",emoji="2️⃣")
-    button3 = Button(label="파티",emoji="1️⃣")
-    button4 = Button(label="파티",emoji="2️⃣")
-    button5 = Button(label="파티",emoji="1️⃣")
-    button6 = Button(label="파티",emoji="2️⃣")
-    button7 = Button(label="파티",emoji="1️⃣")
-    button8 = Button(label="파티",emoji="2️⃣")
-    button9 = Button(label="파티",emoji="1️⃣")
-    button10 = Button(label="파티",emoji="2️⃣")
-
-    async def button_callback1(interaction:discord.Interaction):
-        if interaction.user.display_name in x:
-            x.remove(interaction.user.display_name)
-            embed = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
-            embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-            embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed)
-            i-1
-        else:
-            x.insert(i,interaction.user.display_name)
-            embed = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
-            embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-            embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed)
-            i+1
-    async def button_callback2(interaction:discord.Interaction):
-        if interaction.user.display_name in y:
-            y.remove(interaction.user.display_name)
-            embed = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
-            embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-            embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed)
-            k-1
-        else:
-            y.insert(k,interaction.user.display_name)
-            embed = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
-            embed.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-            embed.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed)
-            k+1
-    async def button_callback3(interaction:discord.Interaction):
-        if interaction.user.display_name in x1:
-            x1.remove(interaction.user.display_name)
-            embed1 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
-            embed1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
-            embed1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed1)
-            i1-1
-        else:
-            x1.insert(i1,interaction.user.display_name)
-            embed1 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
-            embed1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
-            embed1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed1)
-            i1+1
-    async def button_callback4(interaction:discord.Interaction):
-        if interaction.user.display_name in y1:
-            y1.remove(interaction.user.display_name)
-            embed1 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
-            embed1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
-            embed1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed1)
-            k1-1
-        else:
-            y1.insert(k1,interaction.user.display_name)
-            embed1 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
-            embed1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
-            embed1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed1)
-            k1+1
-    async def button_callback5(interaction:discord.Interaction):
-        if interaction.user.display_name in x2:
-            x2.remove(interaction.user.display_name)
-            embed2 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
-            embed2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
-            embed2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed2)
-            i2-1
-        else:
-            x2.insert(i2,interaction.user.display_name)
-            embed2 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
-            embed2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
-            embed2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed2)
-            i2+1
-    async def button_callback6(interaction:discord.Interaction):
-        if interaction.user.display_name in y2:
-            y2.remove(interaction.user.display_name)
-            embed2 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
-            embed2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
-            embed2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed2)
-            k2-1
-        else:
-            y2.insert(k2,interaction.user.display_name)
-            embed2 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
-            embed2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
-            embed2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed2)
-            k2+1
-    async def button_callback7(interaction:discord.Interaction):
-        if interaction.user.display_name in x3:
-            x3.remove(interaction.user.display_name)
-            embed3 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
-            embed3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
-            embed3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed3)
-            i3-1
-        else:
-            x3.insert(i3,interaction.user.display_name)
-            embed3 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
-            embed3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
-            embed3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed3)
-            i3+1
-    async def button_callback8(interaction:discord.Interaction):
-        if interaction.user.display_name in y3:
-            y3.remove(interaction.user.display_name)
-            embed3 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
-            embed3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
-            embed3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed3)
-            k3-1
-        else:
-            y3.insert(k3,interaction.user.display_name)
-            embed3 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
-            embed3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
-            embed3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed3)
-            k3+1
-    async def button_callback9(interaction:discord.Interaction):
-        if interaction.user.display_name in x4:
-            x4.remove(interaction.user.display_name)
-            embed4 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
-            embed4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
-            embed4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed4)
-            i4-1
-        else:
-            x4.insert(i4,interaction.user.display_name)
-            embed4 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
-            embed4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
-            embed4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed4)
-            i4+1
-    async def button_callback10(interaction:discord.Interaction):
-        if interaction.user.display_name in y4:
-            y4.remove(interaction.user.display_name)
-            embed4 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
-            embed4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
-            embed4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed4)
-            k4-1
-        else:
-            y4.insert(k4,interaction.user.display_name)
-            embed4 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
-            embed4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
-            embed4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await interaction.response.edit_message(embed=embed4)
-            k4+1  
-    button1.callback = button_callback1
-    button2.callback = button_callback2
-    button3.callback = button_callback3
-    button4.callback = button_callback4
-    button5.callback = button_callback5
-    button6.callback = button_callback6
-    button7.callback = button_callback7
-    button8.callback = button_callback8
-    button9.callback = button_callback9
-    button10.callback = button_callback10
-
-    view = View(timeout=None)
-    view.add_item(button1)
-    view.add_item(button2)
-    view1 = View(timeout=None)
-    view1.add_item(button3)
-    view1.add_item(button4)
-    view2 = View(timeout=None)
-    view2.add_item(button5)
-    view2.add_item(button6)
-    view3 = View(timeout=None)
-    view3.add_item(button7)
-    view3.add_item(button8)
-    view4 = View(timeout=None)
-    view4.add_item(button9)
-    view4.add_item(button10)
-
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
+    select1=View(timeout=None)
+    select1.add_item(SelectMenu())
+    select1.add_item(SelectMenu1())
+    select2=View(timeout=None)
+    select2.add_item(SelectMenu2())
+    select2.add_item(SelectMenu3())
+    select3=View(timeout=None)
+    select3.add_item(SelectMenu4())
+    select3.add_item(SelectMenu5())
+    select4=View(timeout=None)
+    select4.add_item(SelectMenu6())
+    select4.add_item(SelectMenu7())
+    select5=View(timeout=None)
+    select5.add_item(SelectMenu8())
+    select5.add_item(SelectMenu9())
     if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
             if raidcount == 0:
                         mssg1=f"{난이도} {군단장}  {숙련}  {일정}"
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
                         abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
                         abc.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc,view=view)
+                        await interaction.response.send_message(embed=abc,view=select1)
                         msg = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 1:
@@ -248,7 +1026,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc1 = Embed(title='2팟 레이드 길드 팟',description=mssg2, color=0x395bc0)
                         abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
                         abc1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc1,view=view1)
+                        await interaction.response.send_message(embed=abc1,view=select2)
                         msg1 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 2:
@@ -256,7 +1034,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc2 = Embed(title='3팟 레이드 길드 팟',description=mssg3, color=0x395bc0)
                         abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
                         abc2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc2,view=view2)
+                        await interaction.response.send_message(embed=abc2,view=select3)
                         msg2 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 3:
@@ -264,7 +1042,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc3 = Embed(title='4팟 레이드 길드 팟',description=mssg4, color=0x395bc0)
                         abc3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
                         abc3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc3,view=view3)
+                        await interaction.response.send_message(embed=abc3,view=select4)
                         msg3 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 4:
@@ -272,14 +1050,13 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc4 = Embed(title='5팟 레이드 길드 팟',description=mssg5, color=0x395bc0)
                         abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc4,view=view4)
+                        await interaction.response.send_message(embed=abc4,view=select5)
                         msg4 = await interaction.original_response()
                         raidcount += 1
             if raidcount == 5:
                         await interaction.response.send_message("풀파티입니다.")
     else:
         await interaction.response.send_message("관리자가 아닙니다.")
-
 
 @app_commands.choices(팟 = [
     Choice(name = '1팟', value='1'),
@@ -291,7 +1068,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
 
 @tree.command(name = "레이드수정", description="레이드 일정을 수정합니다.")
 async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군단장: str,숙련: str, 일정: str):
-    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     if 팟 == '1':
         mssg1=f"{난이도} {군단장}  {숙련}  {일정}"
         rd1 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x3cc039)
@@ -330,7 +1107,7 @@ async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군
         
 @tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
-    global x,y,x1,y1,x2,y2,x3,y3,x4,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg4,mssg5
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     x = ["X","X","X","X","X"]
     y = ["X","X","X","X","X"]
     x1 = ["X","X","X","X","X"]
