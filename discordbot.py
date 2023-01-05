@@ -136,7 +136,7 @@ class SelectMenu(discord.ui.Select):
             await msg.edit(embed=ek1)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)
             i+1
-        await interaction.response.defer()
+         
 class SelectMenu1(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -232,7 +232,7 @@ class SelectMenu1(discord.ui.Select):
             await msg.edit(embed=ek2)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)
             k+1
-        await interaction.response.defer()
+         
 class SelectMenu2(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -328,7 +328,7 @@ class SelectMenu2(discord.ui.Select):
             await msg1.edit(embed=ek3)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)             
             i1+1
-        await interaction.response.defer()
+         
 class SelectMenu3(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -424,7 +424,7 @@ class SelectMenu3(discord.ui.Select):
             await msg1.edit(embed=ek3)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)            
             k1+1
-        await interaction.response.defer()
+         
 class SelectMenu4(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -520,7 +520,7 @@ class SelectMenu4(discord.ui.Select):
             await msg2.edit(embed=ek4)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)         
             i1+1
-        await interaction.response.defer()
+         
 class SelectMenu5(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -616,7 +616,7 @@ class SelectMenu5(discord.ui.Select):
             await msg2.edit(embed=ek5)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)       
             k2+1
-        await interaction.response.defer()
+         
 class SelectMenu6(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -712,7 +712,7 @@ class SelectMenu6(discord.ui.Select):
             await msg3.edit(embed=ek6)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)            
             i3+1
-        await interaction.response.defer()
+         
 class SelectMenu7(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -808,7 +808,7 @@ class SelectMenu7(discord.ui.Select):
             await msg3.edit(embed=ek5)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)           
             k3+1
-        await interaction.response.defer()
+         
 class SelectMenu8(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -904,7 +904,7 @@ class SelectMenu8(discord.ui.Select):
             await msg4.edit(embed=ek8)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)            
             i4+1
-        await interaction.response.defer()
+         
 class SelectMenu9(discord.ui.Select):
     def __init__(self):
         global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -1000,7 +1000,7 @@ class SelectMenu9(discord.ui.Select):
             await msg4.edit(embed=ek9)
             await interaction.response.send_message(f"참여 완료", ephemeral=True)           
             k4+1
-        await interaction.response.defer()
+         
 
 @tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
 async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: str, 숙련: str, 일정: str):
