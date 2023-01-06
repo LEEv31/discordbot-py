@@ -176,14 +176,14 @@ class SelectMenu(discord.ui.Select):
             user = f"{interaction.user.display_name}(기상술사)"
         if user in x:
             x.remove(user)
-            eb1 = Embed(title="1팟 레이드 길드 팟", description=mssg1)
+            eb1 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
             eb1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             eb1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await interaction.response.edit_message(embed=eb1)
             i-1
         else:
             x.insert(i,user)
-            ek1 = Embed(title="1팟 레이드 길드 팟", description=mssg1)
+            ek1 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
             ek1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             ek1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
             await interaction.response.edit_message(embed=ek1)
