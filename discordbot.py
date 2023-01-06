@@ -44,7 +44,7 @@ rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="",""
 eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5="","","","","","","","","",""
 
 class MyModal(ui.Modal, title="Information"):
-    name =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="hi", style=discord.TextStyle.short)
+    name =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
         mssg1=f"{self.name}"
@@ -53,7 +53,7 @@ class MyModal(ui.Modal, title="Information"):
         rd1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
         await interaction.response.edit_message(embed=rd1)
 class MyModal1(ui.Modal, title="Information"):
-    name1 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="hi", style=discord.TextStyle.short)
+    name1 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
         mssg2=f"{self.name1}"
@@ -62,7 +62,7 @@ class MyModal1(ui.Modal, title="Information"):
         rd2.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
         await interaction.response.edit_message(embed=rd2)
 class MyModal2(ui.Modal, title="Information"):
-    name2 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="hi", style=discord.TextStyle.short)
+    name2 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
         mssg3=f"{self.name2}"
@@ -71,7 +71,7 @@ class MyModal2(ui.Modal, title="Information"):
         rd3.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
         await interaction.response.edit_message(embed=rd3)
 class MyModal3(ui.Modal, title="Information"):
-    name3 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="hi", style=discord.TextStyle.short)
+    name3 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
         mssg4=f"{self.name3}"
@@ -80,7 +80,7 @@ class MyModal3(ui.Modal, title="Information"):
         rd4.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
         await interaction.response.edit_message(embed=rd4)
 class MyModal4(ui.Modal, title="Information"):
-    name4 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="hi", style=discord.TextStyle.short)
+    name4 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
         mssg5=f"{self.name4}"
