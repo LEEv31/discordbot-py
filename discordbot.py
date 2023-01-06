@@ -39,11 +39,11 @@ x4 = ["X","X","X","X","X"]
 y4 = ["X","X","X","X","X"]
 
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","","",""
-eb1,eb2,eb3,eb4,eb5,eb6,eb7,eb8,eb9,ek1,ek2,ek3,ek4,ek5,ek6,ek7,ek8,ek9 = "","","","","","","","","","","","","","","","","",""
+rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","",""
+eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5="","","","","","","","","",""
 class SelectMenu(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5       
         options = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -126,16 +126,15 @@ class SelectMenu(discord.ui.Select):
             eb1 = Embed(title="1팟 레이드 길드 팟", description=mssg1)
             eb1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             eb1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.send_message(embed=eb1,view=select1)
+            await interaction.response.edit_message(embed=eb1)
             i-1
         else:
             x.insert(i,user)
             ek1 = Embed(title="1팟 레이드 길드 팟", description=mssg1)
             ek1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             ek1.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.send_message(embed=ek2,view=select1)
+            await interaction.response.edit_message(embed=ek1)
             i+1
-        await interaction.response.defer()
 class SelectMenu1(discord.ui.Select):
     def __init__(self):
         global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
@@ -221,20 +220,18 @@ class SelectMenu1(discord.ui.Select):
             eb2 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
             eb2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             eb2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.send_message(embed=eb2,view=select1)
+            await interaction.response.edit_message(embed=eb2)
             k-1
         else:
             y.insert(k,user1)
             ek2 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
             ek2.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
             ek2.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-            await interaction.response.send_message(embed=ek2,view=select1)
+            await interaction.response.edit_message(embed=ek2)
             k+1
-        await interaction.response.defer()
-        
 class SelectMenu2(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options2 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -284,7 +281,7 @@ class SelectMenu2(discord.ui.Select):
             user2 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user2 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user2 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user2 = f"{interaction.user.display_name}(호크아이)"
@@ -317,21 +314,18 @@ class SelectMenu2(discord.ui.Select):
             eb3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             eb3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             eb3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=eb3)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)       
+            await interaction.response.edit_message(embed=eb3)       
             i1-1
         else:
             x1.insert(i1,user2)
             ek3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             ek3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             ek3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=ek3)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)             
+            await interaction.response.edit_message(embed=ek3)             
             i1+1
-         
 class SelectMenu3(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options3 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -381,7 +375,7 @@ class SelectMenu3(discord.ui.Select):
             user3 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user3 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user3 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user3 = f"{interaction.user.display_name}(호크아이)"
@@ -414,20 +408,18 @@ class SelectMenu3(discord.ui.Select):
             eb3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             eb3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             eb3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=eb3)
+            await interaction.response.edit_message(embed=eb3)
             k1-1
         else:
             y1.insert(k1,user3)
             ek3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             ek3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
             ek3.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-            await msg1.edit(embed=ek3)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)            
+            await interaction.response.edit_message(embed=ek3)            
             k1+1
-         
 class SelectMenu4(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options4 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -477,7 +469,7 @@ class SelectMenu4(discord.ui.Select):
             user4 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user4 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user4 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user4 = f"{interaction.user.display_name}(호크아이)"
@@ -510,21 +502,18 @@ class SelectMenu4(discord.ui.Select):
             eb4 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             eb4.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             eb4.add_field(name="2 파티", value=y1[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=eb4)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)     
+            await interaction.response.edit_message(embed=eb4)     
             i1-1
         else:
             x2.insert(i1,user4)
             ek4 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             ek4.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             ek4.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=ek4)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)         
+            await interaction.response.edit_message(embed=ek4)         
             i1+1
-         
 class SelectMenu5(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options5 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -574,7 +563,7 @@ class SelectMenu5(discord.ui.Select):
             user5 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user5 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user5 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user5 = f"{interaction.user.display_name}(호크아이)"
@@ -607,21 +596,18 @@ class SelectMenu5(discord.ui.Select):
             eb5 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             eb5.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             eb5.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=eb5)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)      
+            await interaction.response.edit_message(embed=eb5)      
             i2-1
         else:
             y2.insert(k2,user5)
             ek5 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x395bc0)
             ek5.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
             ek5.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-            await msg2.edit(embed=ek5)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)       
+            await interaction.response.edit_message(embed=ek5)       
             k2+1
-         
 class SelectMenu6(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options6 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -671,7 +657,7 @@ class SelectMenu6(discord.ui.Select):
             user6 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user6 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user6 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user6 = f"{interaction.user.display_name}(호크아이)"
@@ -704,21 +690,18 @@ class SelectMenu6(discord.ui.Select):
             eb6 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             eb6.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             eb6.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=eb6)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)            
+            await interaction.response.edit_message(embed=eb6)            
             i3-1
         else:
             x3.insert(i3,user6)
             ek6 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             ek6.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             ek6.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=ek6)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)            
+            await interaction.response.edit_message(embed=ek6)            
             i3+1
-         
 class SelectMenu7(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options7 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -768,7 +751,7 @@ class SelectMenu7(discord.ui.Select):
             user7 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user7 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user7 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user7 = f"{interaction.user.display_name}(호크아이)"
@@ -801,21 +784,18 @@ class SelectMenu7(discord.ui.Select):
             eb5 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             eb5.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             eb5.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=eb5)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)          
+            await interaction.response.edit_message(embed=eb5)          
             k3-1
         else:
             y3.insert(k3,user7)
             ek5 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x395bc0)
             ek5.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
             ek5.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-            await msg3.edit(embed=ek5)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)           
+            await interaction.response.edit_message(embed=ek5)           
             k3+1
-         
 class SelectMenu8(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options8 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -865,7 +845,7 @@ class SelectMenu8(discord.ui.Select):
             user8 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user8 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user8 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user8 = f"{interaction.user.display_name}(호크아이)"
@@ -898,21 +878,18 @@ class SelectMenu8(discord.ui.Select):
             eb8 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             eb8.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             eb8.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=eb8)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)             
+            await interaction.response.edit_message(embed=eb8)             
             i4-1
         else:
             x4.insert(i4,user8)
             ek8 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             ek8.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             ek8.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=ek8)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)            
+            await interaction.response.edit_message(embed=ek8)            
             i4+1
-         
 class SelectMenu9(discord.ui.Select):
     def __init__(self):
-        global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+        global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
         options9 = [discord.SelectOption(label="버서커", description="버서커"),
                    discord.SelectOption(label="디스트로이어", description="디스트로이어"),
                    discord.SelectOption(label="워로드", description="워로드"),
@@ -962,7 +939,7 @@ class SelectMenu9(discord.ui.Select):
             user9 = f"{interaction.user.display_name}(스트라이커)"
         elif self.values[0] == "데빌헌터":
             user9 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "블래스터":
+        elif self.values[0] == "블래스터ㅓ":
             user9 = f"{interaction.user.display_name}(블래스터)"
         elif self.values[0] == "호크아이":
             user9 = f"{interaction.user.display_name}(호크아이)"
@@ -995,37 +972,44 @@ class SelectMenu9(discord.ui.Select):
             eb9 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             eb9.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             eb9.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=eb9)
-            await interaction.response.send_message(f"퇴장 완료", ephemeral=True)      
+            await interaction.response.edit_message(embed=eb9)      
             k4-1
         else:
             y4.insert(i4,user9)
             ek9 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x395bc0)
             ek9.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
             ek9.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-            await msg4.edit(embed=ek9)
-            await interaction.response.send_message(f"참여 완료", ephemeral=True)           
+            await interaction.response.edit_message(embed=ek9)           
             k4+1
-         
-select1=View(timeout=None)
-select1.add_item(SelectMenu())
-select1.add_item(SelectMenu1())
-select2=View(timeout=None)
-select2.add_item(SelectMenu2())
-select2.add_item(SelectMenu3())
-select3=View(timeout=None)
-select3.add_item(SelectMenu4())
-select3.add_item(SelectMenu5())
-select4=View(timeout=None)
-select4.add_item(SelectMenu6())
-select4.add_item(SelectMenu7())
-select5=View(timeout=None)
-select5.add_item(SelectMenu8())
-select5.add_item(SelectMenu9())
+class select1(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(SelectMenu())
+        self.add_item(SelectMenu1())
+class select2(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(SelectMenu2())
+        self.add_item(SelectMenu3())
+class select3(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(SelectMenu4())
+        self.add_item(SelectMenu5())
+class select4(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(SelectMenu6())
+        self.add_item(SelectMenu7())
+class select5(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(SelectMenu8())
+        self.add_item(SelectMenu9())
 
 @tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
 async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: str, 숙련: str, 일정: str):
-    global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5,select1
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
     if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
@@ -1034,7 +1018,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
                         abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
                         abc.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc,view=select1)
+                        await interaction.response.send_message(embed=abc,view=select1())
                         msg = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 1:
@@ -1042,7 +1026,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc1 = Embed(title='2팟 레이드 길드 팟',description=mssg2, color=0x395bc0)
                         abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
                         abc1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc1,view=select2)
+                        await interaction.response.send_message(embed=abc1,view=select2())
                         msg1 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 2:
@@ -1050,7 +1034,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc2 = Embed(title='3팟 레이드 길드 팟',description=mssg3, color=0x395bc0)
                         abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
                         abc2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc2,view=select3)
+                        await interaction.response.send_message(embed=abc2,view=select3())
                         msg2 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 3:
@@ -1058,7 +1042,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc3 = Embed(title='4팟 레이드 길드 팟',description=mssg4, color=0x395bc0)
                         abc3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
                         abc3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc3,view=select4)
+                        await interaction.response.send_message(embed=abc3,view=select4())
                         msg3 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 4:
@@ -1066,13 +1050,14 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
                         abc4 = Embed(title='5팟 레이드 길드 팟',description=mssg5, color=0x395bc0)
                         abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc4,view=select5)
+                        await interaction.response.send_message(embed=abc4,view=select5())
                         msg4 = await interaction.original_response()
                         raidcount += 1
             if raidcount == 5:
                         await interaction.response.send_message("풀파티입니다.")
     else:
         await interaction.response.send_message("관리자가 아닙니다.")
+
 
 @app_commands.choices(팟 = [
     Choice(name = '1팟', value='1'),
@@ -1084,7 +1069,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
 
 @tree.command(name = "레이드수정", description="레이드 일정을 수정합니다.")
 async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군단장: str,숙련: str, 일정: str):
-    global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+    global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5
     if 팟 == '1':
         mssg1=f"{난이도} {군단장}  {숙련}  {일정}"
         rd1 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x3cc039)
@@ -1123,7 +1108,7 @@ async def slash3(interaction: discord.Interaction, 팟: str, 난이도: str, 군
         
 @tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
-    global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
+    global x,y,x1,y1,x2,y2,x3,y3,x4,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg4,mssg5
     x = ["X","X","X","X","X"]
     y = ["X","X","X","X","X"]
     x1 = ["X","X","X","X","X"]
