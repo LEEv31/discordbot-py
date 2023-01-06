@@ -47,6 +47,7 @@ class MyModal(ui.Modal, title="Information"):
     name =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
+        global mssg1
         mssg1=f"{self.name}"
         rd1 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x3cc039)
         rd1.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
@@ -56,6 +57,7 @@ class MyModal1(ui.Modal, title="Information"):
     name1 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
+        global mssg2
         mssg2=f"{self.name1}"
         rd2 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x3cc039)
         rd2.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
@@ -65,6 +67,7 @@ class MyModal2(ui.Modal, title="Information"):
     name2 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
+        global mssg3
         mssg3=f"{self.name2}"
         rd3 = Embed(title="3팟 레이드 길드 팟", description=mssg3, color=0x3cc039)
         rd3.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
@@ -74,6 +77,7 @@ class MyModal3(ui.Modal, title="Information"):
     name3 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
+        global mssg4
         mssg4=f"{self.name3}"
         rd4 = Embed(title="4팟 레이드 길드 팟", description=mssg4, color=0x3cc039)
         rd4.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
@@ -83,6 +87,7 @@ class MyModal4(ui.Modal, title="Information"):
     name4 =  ui.TextInput(label="수정할 내용을 적어주세요.",placeholder="ex)군단장 난이도 숙련도 일정", style=discord.TextStyle.short)
 
     async def on_submit(self, interaction: discord.Interaction):
+        global mssg5
         mssg5=f"{self.name4}"
         rd5 = Embed(title="5팟 레이드 길드 팟", description=mssg5, color=0x3cc039)
         rd5.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
