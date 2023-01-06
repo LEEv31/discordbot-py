@@ -1007,27 +1007,27 @@ class SelectMenu9(discord.ui.Select):
             await interaction.response.send_message(f"참여 완료", ephemeral=True)           
             k4+1
          
+select1=View(timeout=None)
+select1.add_item(SelectMenu())
+select1.add_item(SelectMenu1())
+select2=View(timeout=None)
+select2.add_item(SelectMenu2())
+select2.add_item(SelectMenu3())
+select3=View(timeout=None)
+select3.add_item(SelectMenu4())
+select3.add_item(SelectMenu5())
+select4=View(timeout=None)
+select4.add_item(SelectMenu6())
+select4.add_item(SelectMenu7())
+select5=View(timeout=None)
+select5.add_item(SelectMenu8())
+select5.add_item(SelectMenu9())
 
 @tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
 async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: str, 숙련: str, 일정: str):
     global x,x1,x2,x3,x4,y,y1,y2,y3,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
-    select1=View(timeout=None)
-    select1.add_item(SelectMenu())
-    select1.add_item(SelectMenu1())
-    select2=View(timeout=None)
-    select2.add_item(SelectMenu2())
-    select2.add_item(SelectMenu3())
-    select3=View(timeout=None)
-    select3.add_item(SelectMenu4())
-    select3.add_item(SelectMenu5())
-    select4=View(timeout=None)
-    select4.add_item(SelectMenu6())
-    select4.add_item(SelectMenu7())
-    select5=View(timeout=None)
-    select5.add_item(SelectMenu8())
-    select5.add_item(SelectMenu9())
     if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
             if raidcount == 0:
                         mssg1=f"{난이도} {군단장}  {숙련}  {일정}"
