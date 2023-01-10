@@ -456,7 +456,7 @@ class SelectMenu3(discord.ui.Select):
             user3 = f"{interaction.user.display_name}(도화가)"
         elif self.values[0] == "기상술사":
             user3 = f"{interaction.user.display_name}(기상술사)"
-        if user3 in 1:
+        if user3 in y1:
             y1.remove(user3)
             eb3 = Embed(title="2팟 레이드 길드 팟", description=mssg2, color=0x395bc0)
             eb3.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
