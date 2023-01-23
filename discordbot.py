@@ -28,16 +28,16 @@ class anlient(discord.Client):
 client = anlient()
 tree = app_commands.CommandTree(client)
 
-x = ["X","X","X","X","X"]
-y = ["X","X","X","X","X"]
-x1 = ["X","X","X","X","X"]
-y1 = ["X","X","X","X","X"]
-x2 = ["X","X","X","X","X"]
-y2 = ["X","X","X","X","X"]
-x3 = ["X","X","X","X","X"]
-y3 = ["X","X","X","X","X"]
-x4 = ["X","X","X","X","X"]
-y4 = ["X","X","X","X","X"]
+x = ["X","X","X","X"]
+y = ["X","X","X","X"]
+x1 = ["X","X","X","X"]
+y1 = ["X","X","X","X"]
+x2 = ["X","X","X","X"]
+y2 = ["X","X","X","X"]
+x3 = ["X","X","X","X"]
+y3 = ["X","X","X","X"]
+x4 = ["X","X","X","X"]
+y4 = ["X","X","X","X"]
 
 raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
 rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","",""
@@ -191,83 +191,83 @@ class SelectMenu(discord.ui.Select):
 class SelectMenu1(discord.ui.Select):
     def __init__(self):
         global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,eb1,eb2,eb3,eb4,eb5,ek1,ek2,ek3,ek4,ek5
-        options1 = [discord.SelectOption(label="버서커", value="1", description="버서커"),
-                   discord.SelectOption(label="디스트로이어", value="2", description="디스트로이어"),
-                   discord.SelectOption(label="워로드", value="3", description="워로드"),
-                   discord.SelectOption(label="홀리나이트", value="4", description="홀리나이트"),
-                   discord.SelectOption(label="슬레이어", value="5", description="슬레이어"),
-                   discord.SelectOption(label="배틀마스터", value="6", description="배틀마스터"),
-                   discord.SelectOption(label="인파이터", value="7", description="인파이터"),
-                   discord.SelectOption(label="기공사", value="8", description="기공사"),
-                   discord.SelectOption(label="창술사", value="9", description="창술사"),
-                   discord.SelectOption(label="스트라이커", value="10", description="스트라이커"),
-                   discord.SelectOption(label="데빌헌터", value="11", description="데빌헌터"),
-                   discord.SelectOption(label="블래스터", value="12", description="블래스터"),
-                   discord.SelectOption(label="호크아이", value="13", description="호크아이"),
-                   discord.SelectOption(label="스카우터", value="14", description="스카우터"),
-                   discord.SelectOption(label="건슬링어", value="15", description="건슬링어"),
-                   discord.SelectOption(label="아르카나", value="16", description="아르카나"),
-                   discord.SelectOption(label="서머너", value="17", description="서머너"),
-                   discord.SelectOption(label="바드", value="18", description="바드"),
-                   discord.SelectOption(label="소서리스", value="19", description="소서리스"),
-                   discord.SelectOption(label="데모닉", value="20", description="데모닉"),
-                   discord.SelectOption(label="블레이드", value="21", description="블레이드"),
-                   discord.SelectOption(label="리퍼", value="22", description="리퍼"),
-                   discord.SelectOption(label="소울이터", value="23", description="소울이터"),
-                   discord.SelectOption(label="도화가", value="24", description="도화가"),
-                   discord.SelectOption(label="기상술사", value="25", description="기상술사")]
+        options1 = [discord.SelectOption(label="버서커", description="버서커"),
+                   discord.SelectOption(label="디스트로이어", description="디스트로이어"),
+                   discord.SelectOption(label="워로드", description="워로드"),
+                   discord.SelectOption(label="홀리나이트", description="홀리나이트"),
+                   discord.SelectOption(label="슬레이어", description="슬레이어"),
+                   discord.SelectOption(label="배틀마스터", description="배틀마스터"),
+                   discord.SelectOption(label="인파이터", description="인파이터"),
+                   discord.SelectOption(label="기공사", description="기공사"),
+                   discord.SelectOption(label="창술사", description="창술사"),
+                   discord.SelectOption(label="스트라이커", description="스트라이커"),
+                   discord.SelectOption(label="데빌헌터", description="데빌헌터"),
+                   discord.SelectOption(label="블래스터", description="블래스터"),
+                   discord.SelectOption(label="호크아이", description="호크아이"),
+                   discord.SelectOption(label="스카우터", description="스카우터"),
+                   discord.SelectOption(label="건슬링어", description="건슬링어"),
+                   discord.SelectOption(label="아르카나", description="아르카나"),
+                   discord.SelectOption(label="서머너", description="서머너"),
+                   discord.SelectOption(label="바드", description="바드"),
+                   discord.SelectOption(label="소서리스", description="소서리스"),
+                   discord.SelectOption(label="데모닉", description="데모닉"),
+                   discord.SelectOption(label="블레이드", description="블레이드"),
+                   discord.SelectOption(label="리퍼", description="리퍼"),
+                   discord.SelectOption(label="소울이터", description="소울이터"),
+                   discord.SelectOption(label="도화가", description="도화가"),
+                   discord.SelectOption(label="기상술사", description="기상술사")]
         super().__init__(placeholder="2 파티", max_values=1, min_values=1, options=options1)
     async def callback(self, interaction: discord.Interaction):
-        if self.values[0] == "1":
-            user1 = f"{interaction.user.display_name}(버서커)"
-        elif self.values[0] == "2":
-            user1 = f"{interaction.user.display_name}(디스트로이어)"
-        elif self.values[0] == "3":
-            user1 = f"{interaction.user.display_name}(워로드)"
-        elif self.values[0] == "4":
-            user1 = f"{interaction.user.display_name}(홀리나이트)"
-        elif self.values[0] == "5":
-            user1 = f"{interaction.user.display_name}(슬레이어)"
-        elif self.values[0] == "6":
-            user1 = f"{interaction.user.display_name}(배틀마스터)"
-        elif self.values[0] == "7":
-            user1 = f"{interaction.user.display_name}(인파이터)"
-        elif self.values[0] == "8":
-            user1 = f"{interaction.user.display_name}(기공사)"
-        elif self.values[0] == "9":
-            user1 = f"{interaction.user.display_name}(창술사)"
-        elif self.values[0] == "10":
-            user1 = f"{interaction.user.display_name}(스트라이커)"
-        elif self.values[0] == "11":
-            user1 = f"{interaction.user.display_name}(데빌헌터)"
-        elif self.values[0] == "12":
-            user1 = f"{interaction.user.display_name}(블래스터)"
-        elif self.values[0] == "13":
-            user1 = f"{interaction.user.display_name}(호크아이)"
-        elif self.values[0] == "14":
-            user1 = f"{interaction.user.display_name}(스카우터)"
-        elif self.values[0] == "15":
-            user1 = f"{interaction.user.display_name}(건슬링어)"
-        elif self.values[0] == "16":
-            user1 = f"{interaction.user.display_name}(아르카나)"
-        elif self.values[0] == "17":
-            user1 = f"{interaction.user.display_name}(서머너)"
-        elif self.values[0] == "18":
-            user1 = f"{interaction.user.display_name}(바드)"
-        elif self.values[0] == "19":
-            user1 = f"{interaction.user.display_name}(소서리스)"
-        elif self.values[0] == "20":
-            user1 = f"{interaction.user.display_name}(데모닉)"
-        elif self.values[0] == "21":
-            user1 = f"{interaction.user.display_name}(블레이드)"
-        elif self.values[0] == "22":
-            user1 = f"{interaction.user.display_name}(리퍼)"
-        elif self.values[0] == "23":
-            user1 = f"{interaction.user.display_name}(소울이터)"
-        elif self.values[0] == "24":
-            user1 = f"{interaction.user.display_name}(도화가)"
-        elif self.values[0] == "25":
-            user1 = f"{interaction.user.display_name}(기상술사)"
+        if self.values[0] == "버서커":
+            user8 = f"{interaction.user.display_name}(버서커)"
+        elif self.values[0] == "디스트로이어":
+            user8 = f"{interaction.user.display_name}(디스트로이어)"
+        elif self.values[0] == "워로드":
+            user8 = f"{interaction.user.display_name}(워로드)"
+        elif self.values[0] == "홀리나이트":
+            user8 = f"{interaction.user.display_name}(홀리나이트)"
+        elif self.values[0] == "슬레이어":
+            user8 = f"{interaction.user.display_name}(슬레이어)"
+        elif self.values[0] == "배틀마스터":
+            user8 = f"{interaction.user.display_name}(배틀마스터)"
+        elif self.values[0] == "인파이터":
+            user8 = f"{interaction.user.display_name}(인파이터)"
+        elif self.values[0] == "기공사":
+            user8 = f"{interaction.user.display_name}(기공사)"
+        elif self.values[0] == "창술사":
+            user8 = f"{interaction.user.display_name}(창술사)"
+        elif self.values[0] == "스트라이커":
+            user8 = f"{interaction.user.display_name}(스트라이커)"
+        elif self.values[0] == "데빌헌터":
+            user8 = f"{interaction.user.display_name}(데빌헌터)"
+        elif self.values[0] == "블래스터":
+            user8 = f"{interaction.user.display_name}(블래스터)"
+        elif self.values[0] == "호크아이":
+            user8 = f"{interaction.user.display_name}(호크아이)"
+        elif self.values[0] == "스카우터":
+            user8 = f"{interaction.user.display_name}(스카우터)"
+        elif self.values[0] == "건슬링어":
+            user8 = f"{interaction.user.display_name}(건슬링어)"
+        elif self.values[0] == "아르카나":
+            user8 = f"{interaction.user.display_name}(아르카나)"
+        elif self.values[0] == "서머너":
+            user8 = f"{interaction.user.display_name}(서머너)"
+        elif self.values[0] == "바드":
+            user8 = f"{interaction.user.display_name}(바드)"
+        elif self.values[0] == "소서리스":
+            user8 = f"{interaction.user.display_name}(소서리스)"
+        elif self.values[0] == "데모닉":
+            user8 = f"{interaction.user.display_name}(데모닉)"
+        elif self.values[0] == "블레이드":
+            user8 = f"{interaction.user.display_name}(블레이드)"
+        elif self.values[0] == "리퍼":
+            user8 = f"{interaction.user.display_name}(리퍼)"
+        elif self.values[0] == "소울이터":
+            user8 = f"{interaction.user.display_name}(소울이터)"
+        elif self.values[0] == "도화가":
+            user8 = f"{interaction.user.display_name}(도화가)"
+        elif self.values[0] == "기상술사":
+            user8 = f"{interaction.user.display_name}(기상술사)"
         if user1 in y:
             y.remove(user1)
             eb2 = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
@@ -1160,35 +1160,25 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
 @tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
     global x,y,x1,y1,x2,y2,x3,y3,x4,y4,raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg4,mssg5
-    x = ["X","X","X","X","X"]
-    y = ["X","X","X","X","X"]
-    x1 = ["X","X","X","X","X"]
-    y1 = ["X","X","X","X","X"]
-    x2 = ["X","X","X","X","X"]
-    y2 = ["X","X","X","X","X"]
-    x3 = ["X","X","X","X","X"]
-    y3 = ["X","X","X","X","X"]
-    x4 = ["X","X","X","X","X"]
-    y4 = ["X","X","X","X","X"]
+    x = ["X","X","X","X"]
+    y = ["X","X","X","X"]
+    x1 = ["X","X","X","X"]
+    y1 = ["X","X","X","X"]
+    x2 = ["X","X","X","X"]
+    y2 = ["X","X","X","X"]
+    x3 = ["X","X","X","X"]
+    y3 = ["X","X","X","X"]
+    x4 = ["X","X","X","X"]
+    y4 = ["X","X","X","X"]
 
     raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
-    rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg4,mssg5="","","","","","","","","","","","","",""
-    await interaction.response.send_message(f"초기화 완료", ephemeral=True)
-
-@tree.command(name = "파티모집기사용법",description="파티모집 어떻게 사용하나요?")
-async def slash4(interaction: discord.Interaction):
-    raidhelp = Embed(title='딜컷 파티모집기',description="사용법", color=0xb3be23)
-    raidhelp.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
-    raidhelp.add_field(name="/레이드수정", value="1팟~5팟 레이드 일정을 수정합니다.", inline=False)
-    raidhelp.add_field(name="/레이드초기화", value="레이드 일정을 초기화합니다.", inline=False)
-    raidhelp.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
-    await interaction.response.send_message(embed=raidhelp,ephemeral=True) 
+    rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","",""
+    await interaction.response.send_message(f"초기화 완료", ephemeral=False)
   
 @tree.command(name = "파티모집기도움말",description="파티모집 어떻게 사용하나요?)")
 async def slash5(interaction: discord.Interaction):
     raidhelp1 = Embed(title='딜컷 파티모집기',description="사용법", color=0xb3be23)
     raidhelp1.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
-    raidhelp1.add_field(name="/레이드수정", value="1팟~5팟 레이드 일정을 수정합니다.", inline=False)
     raidhelp1.add_field(name="/레이드초기화", value="레이드 일정을 초기화합니다.", inline=False)
     raidhelp1.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
     await interaction.response.send_message(embed=raidhelp1,ephemeral=False) 
