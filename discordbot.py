@@ -1110,10 +1110,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
     button4.callback = button_callback4
     button5.callback = button_callback5
 
-    rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
-    rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
-    if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
-            if raidcount == 0:
+    if raidcount == 0:
                         mssg1=f"{난이도} {보스}  {숙련}  {일정}"
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
                         abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
@@ -1121,7 +1118,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
                         await interaction.response.send_message(embed=abc,view=select1())
                         msg = await interaction.original_response()
                         raidcount += 1
-            elif raidcount == 1:
+    elif raidcount == 1:
                         mssg2=f"{난이도} {보스}  {숙련}  {일정}"
                         abc1 = Embed(title='2팟 레이드 길드 팟',description=mssg2, color=0x395bc0)
                         abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
@@ -1129,7 +1126,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
                         await interaction.response.send_message(embed=abc1,view=select2())
                         msg1 = await interaction.original_response()
                         raidcount += 1
-            elif raidcount == 2:
+    elif raidcount == 2:
                         mssg3=f"{난이도} {보스}  {숙련}  {일정}"
                         abc2 = Embed(title='3팟 레이드 길드 팟',description=mssg3, color=0x395bc0)
                         abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
@@ -1137,7 +1134,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
                         await interaction.response.send_message(embed=abc2,view=select3())
                         msg2 = await interaction.original_response()
                         raidcount += 1
-            elif raidcount == 3:
+    elif raidcount == 3:
                         mssg4=f"{난이도} {보스}  {숙련}  {일정}"
                         abc3 = Embed(title='4팟 레이드 길드 팟',description=mssg4, color=0x395bc0)
                         abc3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
@@ -1145,7 +1142,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
                         await interaction.response.send_message(embed=abc3,view=select4())
                         msg3 = await interaction.original_response()
                         raidcount += 1
-            elif raidcount == 4:
+    elif raidcount == 4:
                         mssg5=f"{난이도} {}  {숙련}  {일정}"
                         abc4 = Embed(title='5팟 레이드 길드 팟',description=mssg5, color=0x395bc0)
                         abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
