@@ -1079,7 +1079,7 @@ class select5(discord.ui.View):
     Choice(name = '쿠크세이튼', value='쿠크세이튼'),
     Choice(name = '아브렐슈드', value='아브렐슈드'),
     Choice(name = '일리아칸', value='일리아칸'),
-    Choice(name = '카양겔', value='카양겔')
+    Choice(name = '카양겔', value='카양겔'),
     Choice(name = '볼다이크', value='볼다이크')
 ])
 @app_commands.choices(숙련 = [
