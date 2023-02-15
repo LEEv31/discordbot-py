@@ -1068,14 +1068,19 @@ class select5(discord.ui.View):
 @app_commands.choices(난이도 = [
     Choice(name = '노말', value='노말'),
     Choice(name = '하드', value='하드'),
+    Choice(name = '하드1', value='하드1'),
+    Choice(name = '하드2', value='하드2'),
+    Choice(name = '하드3', value='하드3'),
     Choice(name = '헬', value='헬'),
 ])
-@app_commands.choices(군단장 = [
+@app_commands.choices(레이드 = [
     Choice(name = '발탄', value='발탄'),
     Choice(name = '비아키스', value='비아키스'),
     Choice(name = '쿠크세이튼', value='쿠크세이튼'),
     Choice(name = '아브렐슈드', value='아브렐슈드'),
     Choice(name = '일리아칸', value='일리아칸'),
+    Choice(name = '카양겔', value='카양겔')
+    Choice(name = '볼다이크', value='볼다이크')
 ])
 @app_commands.choices(숙련 = [
     Choice(name = '트라이', value='트라이'),
