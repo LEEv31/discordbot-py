@@ -1064,37 +1064,10 @@ class select5(discord.ui.View):
         self.add_item(SelectMenu8())
         self.add_item(SelectMenu9())
         self.add_item(button5)
-class sc1(discord.ui.View):
-    def __init__(self):
-        super().__init__(timeout=None)
-        self.add_item(SelectMenu())
-        self.add_item(button1)
-class sc2(discord.ui.View):
-    def __init__(self):
-        super().__init__(timeout=None)
-        self.add_item(SelectMenu2())
-        self.add_item(button2)
-class sc3(discord.ui.View):
-    def __init__(self):
-        super().__init__(timeout=None)
-        self.add_item(SelectMenu4())
-        self.add_item(button3)
-class sc4(discord.ui.View):
-    def __init__(self):
-        super().__init__(timeout=None)
-        self.add_item(SelectMenu6())
-        self.add_item(button4)
-class sc5(discord.ui.View):
-    def __init__(self):
-        super().__init__(timeout=None)
-        self.add_item(SelectMenu8())
-        self.add_item(button5)        
+
 @app_commands.choices(난이도 = [
     Choice(name = '노말', value='노말'),
     Choice(name = '하드', value='하드'),
-    Choice(name = '하드1', value='하드1'),
-    Choice(name = '하드2', value='하드2'),
-    Choice(name = '하드3', value='하드3'),
     Choice(name = '헬', value='헬'),
 ])
 @app_commands.choices(레이드 = [
@@ -1103,8 +1076,6 @@ class sc5(discord.ui.View):
     Choice(name = '쿠크세이튼', value='쿠크세이튼'),
     Choice(name = '아브렐슈드', value='아브렐슈드'),
     Choice(name = '일리아칸', value='일리아칸'),
-    Choice(name = '카양겔', value='카양겔'),
-    Choice(name = '볼다이크', value='볼다이크')
 ])
 @app_commands.choices(숙련 = [
     Choice(name = '트라이', value='트라이'),
@@ -1140,45 +1111,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
 
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
-    if 레이드 == "카양겔":
-            if raidcount == 0:
-                        mssg1=f"{난이도} {레이드}  {숙련}  {일정}"
-                        abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
-                        abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc,view=sc1())
-                        msg = await interaction.original_response()
-                        raidcount += 1
-            elif raidcount == 1:
-                        mssg2=f"{난이도} {레이드}  {숙련}  {일정}"
-                        abc1 = Embed(title='2팟 레이드 길드 팟',description=mssg2, color=0x395bc0)
-                        abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc1,view=sc2())
-                        msg1 = await interaction.original_response()
-                        raidcount += 1
-            elif raidcount == 2:
-                        mssg3=f"{난이도} {레이드}  {숙련}  {일정}"
-                        abc2 = Embed(title='3팟 레이드 길드 팟',description=mssg3, color=0x395bc0)
-                        abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc2,view=sc3())
-                        msg2 = await interaction.original_response()
-                        raidcount += 1
-            elif raidcount == 3:
-                        mssg4=f"{난이도} {레이드}  {숙련}  {일정}"
-                        abc3 = Embed(title='4팟 레이드 길드 팟',description=mssg4, color=0x395bc0)
-                        abc3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc3,view=sc4())
-                        msg3 = await interaction.original_response()
-                        raidcount += 1
-            elif raidcount == 4:
-                        mssg5=f"{난이도} {레이드}  {숙련}  {일정}"
-                        abc4 = Embed(title='5팟 레이드 길드 팟',description=mssg5, color=0x395bc0)
-                        abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
-                        await interaction.response.send_message(embed=abc4,view=sc5())
-                        msg4 = await interaction.original_response()
-                        raidcount += 1
-            if raidcount == 5:
-                        await interaction.response.send_message("풀파티입니다.")
-    else:
+    if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
             if raidcount == 0:
                         mssg1=f"{난이도} {레이드}  {숙련}  {일정}"
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
@@ -1221,6 +1154,8 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
                         raidcount += 1
             if raidcount == 5:
                         await interaction.response.send_message("풀파티입니다.")
+    else:
+        await interaction.response.send_message("관리자가 아닙니다.")
         
 @tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
