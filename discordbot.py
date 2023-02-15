@@ -1141,7 +1141,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 군단장: st
     rolesx = discord.utils.get(interaction.guild.roles, name="관리자")
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
     if 레이드 == "카양겔":
-        if raidcount == 0:
+            if raidcount == 0:
                         mssg1=f"{난이도} {레이드}  {숙련}  {일정}"
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
                         abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
