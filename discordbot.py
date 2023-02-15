@@ -1143,7 +1143,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
                         msg3 = await interaction.original_response()
                         raidcount += 1
     elif raidcount == 4:
-                        mssg5=f"{난이도} {}  {숙련}  {일정}"
+                        mssg5=f"{난이도} {보스}  {숙련}  {일정}"
                         abc4 = Embed(title='5팟 레이드 길드 팟',description=mssg5, color=0x395bc0)
                         abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
