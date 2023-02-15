@@ -1070,13 +1070,13 @@ class select5(discord.ui.View):
     Choice(name = '하드', value='하드'),
     Choice(name = '헬', value='헬'),
 ])
-@app_commands.choices(레이드 = [
+@app_commands.choices(보스= [
     Choice(name = '발탄', value='발탄'),
     Choice(name = '비아키스', value='비아키스'),
     Choice(name = '쿠크세이튼', value='쿠크세이튼'),
     Choice(name = '아브렐슈드', value='아브렐슈드'),
     Choice(name = '일리아칸', value='일리아칸'),
-    Choice(name = '볼다이크', value='')
+    Choice(name = '볼다이크', value='볼다이크')
 ])
 @app_commands.choices(숙련 = [
     Choice(name = '트라이', value='트라이'),
@@ -1085,7 +1085,7 @@ class select5(discord.ui.View):
 ])
 
 @tree.command(name = "레이드", description="레이드 일정을 추가합니다.")
-async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: str, 숙련: str, 일정: str):
+async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 숙련: str, 일정: str):
     global raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4,rd1,rd2,rd3,rd4,rd5,msg,msg1,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5,button1,button2,button3,button4,button5
     button1 = Button(label="수정")
     button2 = Button(label="수정")
@@ -1114,7 +1114,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
     rolesx1 = discord.utils.get(interaction.guild.roles, name="비틱궁당장")
     if rolesx in interaction.user.roles or rolesx1 in interaction.user.roles:
             if raidcount == 0:
-                        mssg1=f"{난이도} {레이드}  {숙련}  {일정}"
+                        mssg1=f"{난이도} {보스}  {숙련}  {일정}"
                         abc = Embed(title="1팟 레이드 길드 팟", description=mssg1, color=0x395bc0)
                         abc.add_field(name="1 파티", value=x[0]+"\n"+x[1]+"\n"+x[2]+"\n"+x[3]+"\n", inline=True)
                         abc.add_field(name="2 파티", value=y[0]+"\n"+y[1]+"\n"+y[2]+"\n"+y[3]+"\n", inline=True)
@@ -1122,7 +1122,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
                         msg = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 1:
-                        mssg2=f"{난이도} {레이드}  {숙련}  {일정}"
+                        mssg2=f"{난이도} {보스}  {숙련}  {일정}"
                         abc1 = Embed(title='2팟 레이드 길드 팟',description=mssg2, color=0x395bc0)
                         abc1.add_field(name="1 파티", value=x1[0]+"\n"+x1[1]+"\n"+x1[2]+"\n"+x1[3]+"\n", inline=True)
                         abc1.add_field(name="2 파티", value=y1[0]+"\n"+y1[1]+"\n"+y1[2]+"\n"+y1[3]+"\n", inline=True)
@@ -1130,7 +1130,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
                         msg1 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 2:
-                        mssg3=f"{난이도} {레이드}  {숙련}  {일정}"
+                        mssg3=f"{난이도} {보스}  {숙련}  {일정}"
                         abc2 = Embed(title='3팟 레이드 길드 팟',description=mssg3, color=0x395bc0)
                         abc2.add_field(name="1 파티", value=x2[0]+"\n"+x2[1]+"\n"+x2[2]+"\n"+x2[3]+"\n", inline=True)
                         abc2.add_field(name="2 파티", value=y2[0]+"\n"+y2[1]+"\n"+y2[2]+"\n"+y2[3]+"\n", inline=True)
@@ -1138,7 +1138,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
                         msg2 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 3:
-                        mssg4=f"{난이도} {레이드}  {숙련}  {일정}"
+                        mssg4=f"{난이도} {보스}  {숙련}  {일정}"
                         abc3 = Embed(title='4팟 레이드 길드 팟',description=mssg4, color=0x395bc0)
                         abc3.add_field(name="1 파티", value=x3[0]+"\n"+x3[1]+"\n"+x3[2]+"\n"+x3[3]+"\n", inline=True)
                         abc3.add_field(name="2 파티", value=y3[0]+"\n"+y3[1]+"\n"+y3[2]+"\n"+y3[3]+"\n", inline=True)
@@ -1146,7 +1146,7 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 레이드: st
                         msg3 = await interaction.original_response()
                         raidcount += 1
             elif raidcount == 4:
-                        mssg5=f"{난이도} {레이드}  {숙련}  {일정}"
+                        mssg5=f"{난이도} {}  {숙련}  {일정}"
                         abc4 = Embed(title='5팟 레이드 길드 팟',description=mssg5, color=0x395bc0)
                         abc4.add_field(name="1 파티", value=x4[0]+"\n"+x4[1]+"\n"+x4[2]+"\n"+x4[3]+"\n", inline=True)
                         abc4.add_field(name="2 파티", value=y4[0]+"\n"+y4[1]+"\n"+y4[2]+"\n"+y4[3]+"\n", inline=True)
