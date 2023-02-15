@@ -1150,10 +1150,8 @@ async def slash2(interaction: discord.Interaction, 난이도: str, 보스: str, 
                         await interaction.response.send_message(embed=abc4,view=select5())
                         msg4 = await interaction.original_response()
                         raidcount += 1
-            if raidcount == 5:
+    if raidcount == 5:
                         await interaction.response.send_message("풀파티입니다.")
-    else:
-        await interaction.response.send_message("관리자가 아닙니다.")
         
 @tree.command(name = "레이드초기화", description="레이드 일정을 초기화합니다.")
 async def slash3(interaction: discord.Interaction):
