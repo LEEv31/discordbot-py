@@ -1173,14 +1173,6 @@ async def slash3(interaction: discord.Interaction):
 
     raidcount,i,k,i1,k1,i2,k2,i3,k3,i4,k4 = 0,0,0,0,0,0,0,0,0,0,0
     rd1,rd2,rd3,rd4,rd5,msg,msg2,msg3,msg4,mssg1,mssg2,mssg3,mssg3,mssg4,mssg5="","","","","","","","","","","","","","",""
-    await interaction.response.send_message(f"초기화 완료", ephemeral=False)
-  
-@tree.command(name = "파티모집기도움말",description="파티모집 어떻게 사용하나요?)")
-async def slash5(interaction: discord.Interaction):
-    raidhelp1 = Embed(title='딜컷 파티모집기',description="사용법", color=0xb3be23)
-    raidhelp1.add_field(name="/레이드", value="레이드 일정을 만듭니다.(max 5팟)", inline=False)
-    raidhelp1.add_field(name="/레이드초기화", value="레이드 일정을 초기화합니다.", inline=False)
-    raidhelp1.set_footer(text="로요일마다 초기화하신 후 사용해주세요.")
-    await interaction.response.send_message(embed=raidhelp1,ephemeral=False) 
+    await interaction.response.send_message(f"초기화 완료", ephemeral=False) 
  
 client.run(TOKEN)
